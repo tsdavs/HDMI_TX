@@ -1,0 +1,15 @@
+
+State Machine - |HDMI_OUT|horizontal_draw:h_draw|currentState
+Name currentState.HSLEN currentState.HFP currentState.HACTIVE currentState.HBP currentState.RESTART 
+currentState.HBP 0 0 0 0 0 
+currentState.HACTIVE 0 0 1 1 0 
+currentState.HFP 0 1 0 1 0 
+currentState.HSLEN 1 0 0 1 0 
+currentState.RESTART 0 0 0 1 1 
+
+State Machine - |HDMI_OUT|vertical_draw:v_draw|currentState
+Name currentState.VSLEN currentState.VFP currentState.VACTIVE currentState.VBP 
+currentState.VBP 0 0 0 0 
+currentState.VACTIVE 0 0 1 1 
+currentState.VFP 0 1 0 1 
+currentState.VSLEN 1 0 0 1 

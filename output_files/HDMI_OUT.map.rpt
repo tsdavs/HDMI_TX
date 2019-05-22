@@ -1,0 +1,542 @@
+Analysis & Synthesis report for HDMI_OUT
+Wed May 22 22:47:06 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |HDMI_OUT|horizontal_draw:h_draw|currentState
+  9. State Machine - |HDMI_OUT|vertical_draw:v_draw|currentState
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: vertical_draw:v_draw
+ 15. Parameter Settings for User Entity Instance: horizontal_draw:h_draw
+ 16. Port Connectivity Checks: "image_output:i_output"
+ 17. Port Connectivity Checks: "horizontal_draw:h_draw"
+ 18. Port Connectivity Checks: "vertical_draw:v_draw"
+ 19. Post-Synthesis Netlist Statistics for Top Partition
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
+ 22. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Wed May 22 22:47:06 2019       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; HDMI_OUT                                    ;
+; Top-level Entity Name           ; HDMI_OUT                                    ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 0                                           ;
+; Total pins                      ; 32                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEBA6U23I7DK     ;                    ;
+; Top-level entity name                                                           ; HDMI_OUT           ; HDMI_OUT           ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                  ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                    ; Library ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------+---------+
+; HDMI_OUT.v                       ; yes             ; User Verilog HDL File  ; C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v        ;         ;
+; vertical_draw.v                  ; yes             ; User Verilog HDL File  ; C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/vertical_draw.v   ;         ;
+; horizontal_draw.v                ; yes             ; User Verilog HDL File  ; C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/horizontal_draw.v ;         ;
+; image_output.v                   ; yes             ; User Verilog HDL File  ; C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v    ;         ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimate of Logic utilization (ALMs needed) ; 0              ;
+;                                             ;                ;
+; Combinational ALUT usage for logic          ; 0              ;
+;     -- 7 input functions                    ; 0              ;
+;     -- 6 input functions                    ; 0              ;
+;     -- 5 input functions                    ; 0              ;
+;     -- 4 input functions                    ; 0              ;
+;     -- <=3 input functions                  ; 0              ;
+;                                             ;                ;
+; Dedicated logic registers                   ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 32             ;
+;                                             ;                ;
+; Total DSP Blocks                            ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; I2C_SDA~output ;
+; Maximum fan-out                             ; 1              ;
+; Total fan-out                               ; 33             ;
+; Average fan-out                             ; 0.51           ;
++---------------------------------------------+----------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; |HDMI_OUT                  ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 32   ; 0            ; |HDMI_OUT           ; HDMI_OUT    ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |HDMI_OUT|horizontal_draw:h_draw|currentState                                                                 ;
++----------------------+--------------------+------------------+----------------------+------------------+----------------------+
+; Name                 ; currentState.HSLEN ; currentState.HFP ; currentState.HACTIVE ; currentState.HBP ; currentState.RESTART ;
++----------------------+--------------------+------------------+----------------------+------------------+----------------------+
+; currentState.HBP     ; 0                  ; 0                ; 0                    ; 0                ; 0                    ;
+; currentState.HACTIVE ; 0                  ; 0                ; 1                    ; 1                ; 0                    ;
+; currentState.HFP     ; 0                  ; 1                ; 0                    ; 1                ; 0                    ;
+; currentState.HSLEN   ; 1                  ; 0                ; 0                    ; 1                ; 0                    ;
+; currentState.RESTART ; 0                  ; 0                ; 0                    ; 1                ; 1                    ;
++----------------------+--------------------+------------------+----------------------+------------------+----------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------+
+; State Machine - |HDMI_OUT|vertical_draw:v_draw|currentState                                            ;
++----------------------+--------------------+------------------+----------------------+------------------+
+; Name                 ; currentState.VSLEN ; currentState.VFP ; currentState.VACTIVE ; currentState.VBP ;
++----------------------+--------------------+------------------+----------------------+------------------+
+; currentState.VBP     ; 0                  ; 0                ; 0                    ; 0                ;
+; currentState.VACTIVE ; 0                  ; 0                ; 1                    ; 1                ;
+; currentState.VFP     ; 0                  ; 1                ; 0                    ; 1                ;
+; currentState.VSLEN   ; 1                  ; 0                ; 0                    ; 1                ;
++----------------------+--------------------+------------------+----------------------+------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                   ;
++---------------------------------------------+----------------------------------------+
+; Register name                               ; Reason for Removal                     ;
++---------------------------------------------+----------------------------------------+
+; horizontal_draw:h_draw|horz_pxl[0..9]       ; Stuck at GND due to stuck port data_in ;
+; horizontal_draw:h_draw|currentState.HBP     ; Lost fanout                            ;
+; horizontal_draw:h_draw|currentState.HACTIVE ; Lost fanout                            ;
+; horizontal_draw:h_draw|currentState.HFP     ; Lost fanout                            ;
+; horizontal_draw:h_draw|currentState.HSLEN   ; Lost fanout                            ;
+; horizontal_draw:h_draw|currentState.RESTART ; Lost fanout                            ;
+; horizontal_draw:h_draw|currentState~2       ; Lost fanout                            ;
+; horizontal_draw:h_draw|currentState~3       ; Lost fanout                            ;
+; vertical_draw:v_draw|currentState~2         ; Lost fanout                            ;
+; vertical_draw:v_draw|currentState~3         ; Lost fanout                            ;
+; vertical_draw:v_draw|vert_pxl[0..9]         ; Lost fanout                            ;
+; vertical_draw:v_draw|currentState.VBP       ; Lost fanout                            ;
+; vertical_draw:v_draw|currentState.VACTIVE   ; Lost fanout                            ;
+; vertical_draw:v_draw|currentState.VFP       ; Lost fanout                            ;
+; vertical_draw:v_draw|currentState.VSLEN     ; Lost fanout                            ;
+; Total Number of Removed Registers = 33      ;                                        ;
++---------------------------------------------+----------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                             ;
++-------------------------------------+--------------------+------------------------------------------------------------------------------+
+; Register name                       ; Reason for Removal ; Registers Removed due to This Register                                       ;
++-------------------------------------+--------------------+------------------------------------------------------------------------------+
+; vertical_draw:v_draw|currentState~2 ; Lost Fanouts       ; vertical_draw:v_draw|vert_pxl[8], vertical_draw:v_draw|vert_pxl[9],          ;
+;                                     ;                    ; vertical_draw:v_draw|currentState.VBP, vertical_draw:v_draw|currentState.VFP ;
+; vertical_draw:v_draw|currentState~3 ; Lost Fanouts       ; vertical_draw:v_draw|currentState.VACTIVE                                    ;
+; vertical_draw:v_draw|vert_pxl[0]    ; Lost Fanouts       ; vertical_draw:v_draw|currentState.VSLEN                                      ;
++-------------------------------------+--------------------+------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |HDMI_OUT|vertical_draw:v_draw|vert_pxl[9] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vertical_draw:v_draw ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; VBP            ; 00    ; Unsigned Binary                          ;
+; VACTIVE        ; 01    ; Unsigned Binary                          ;
+; VFP            ; 10    ; Unsigned Binary                          ;
+; VSLEN          ; 11    ; Unsigned Binary                          ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: horizontal_draw:h_draw ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; HBP            ; 000   ; Unsigned Binary                            ;
+; HACTIVE        ; 001   ; Unsigned Binary                            ;
+; HFP            ; 010   ; Unsigned Binary                            ;
+; HSLEN          ; 011   ; Unsigned Binary                            ;
+; RESTART        ; 100   ; Unsigned Binary                            ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "image_output:i_output" ;
++------+-------+----------+-------------------------+
+; Port ; Type  ; Severity ; Details                 ;
++------+-------+----------+-------------------------+
+; mode ; Input ; Info     ; Stuck at GND            ;
++------+-------+----------+-------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "horizontal_draw:h_draw"                                                                                ;
++-------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                    ; Type   ; Severity ; Details                                                                             ;
++-------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; h_back_porch[3..0]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; h_back_porch[11..6]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; h_back_porch[5]         ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; h_back_porch[4]         ; Input  ; Info     ; Stuck at GND                                                                        ;
+; h_front_porch[3..0]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; h_front_porch[11..4]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; h_sync_length[4..0]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; h_sync_length[11..7]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; h_sync_length[6]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; h_sync_length[5]        ; Input  ; Info     ; Stuck at GND                                                                        ;
+; h_active_pixels[6..0]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; h_active_pixels[11..10] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; h_active_pixels[8..7]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; h_active_pixels[9]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; h_total_pixels[9..8]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; h_total_pixels[4..0]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; h_total_pixels[11..10]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; h_total_pixels[7..5]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; output_flag             ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "vertical_draw:v_draw"                                                                                 ;
++------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                   ; Type   ; Severity ; Details                                                                             ;
++------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; v_back_porch[11..6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; v_back_porch[4..0]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; v_back_porch[5]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; v_front_porch[11..4]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; v_front_porch[2..1]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; v_front_porch[3]       ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; v_front_porch[0]       ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; v_sync_length[11..1]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; v_sync_length[0]       ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; v_active_pixels[8..6]  ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; v_active_pixels[4..0]  ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; v_active_pixels[11..9] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; v_active_pixels[5]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; v_total_pixels[3..2]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; v_total_pixels[11..10] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; v_total_pixels[8..4]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; v_total_pixels[1..0]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; v_total_pixels[9]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; h_draw_flag            ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; v_draw_flag            ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_io_obuf        ; 1                           ;
+; arriav_lcell_comb     ; 2                           ;
+;     normal            ; 2                           ;
+;         0 data inputs ; 2                           ;
+; boundary_port         ; 32                          ;
+;                       ;                             ;
+; Max LUT depth         ; 0.00                        ;
+; Average LUT depth     ; 0.00                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Wed May 22 22:46:55 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off HDMI_OUT -c HDMI_OUT
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Warning (10275): Verilog HDL Module Instantiation warning at HDMI_OUT.v(44): ignored dangling comma in List of Port Connections File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 44
+Info (12021): Found 1 design units, including 1 entities, in source file hdmi_out.v
+    Info (12023): Found entity 1: HDMI_OUT File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file vertical_draw.v
+    Info (12023): Found entity 1: vertical_draw File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/vertical_draw.v Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file horizontal_draw.v
+    Info (12023): Found entity 1: horizontal_draw File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/horizontal_draw.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file image_output.v
+    Info (12023): Found entity 1: image_output File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 1
+Info (12127): Elaborating entity "HDMI_OUT" for the top level hierarchy
+Warning (10034): Output port "I2C_SCL" at HDMI_OUT.v(8) has no driver File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 8
+Info (12128): Elaborating entity "vertical_draw" for hierarchy "vertical_draw:v_draw" File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 44
+Warning (10235): Verilog HDL Always Construct warning at vertical_draw.v(54): variable "v_back_porch" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/vertical_draw.v Line: 54
+Warning (10235): Verilog HDL Always Construct warning at vertical_draw.v(61): variable "v_back_porch" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/vertical_draw.v Line: 61
+Warning (10235): Verilog HDL Always Construct warning at vertical_draw.v(61): variable "v_active_pixels" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/vertical_draw.v Line: 61
+Warning (10235): Verilog HDL Always Construct warning at vertical_draw.v(68): variable "v_back_porch" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/vertical_draw.v Line: 68
+Warning (10235): Verilog HDL Always Construct warning at vertical_draw.v(68): variable "v_active_pixels" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/vertical_draw.v Line: 68
+Warning (10235): Verilog HDL Always Construct warning at vertical_draw.v(68): variable "v_front_porch" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/vertical_draw.v Line: 68
+Warning (10235): Verilog HDL Always Construct warning at vertical_draw.v(75): variable "v_total_pixels" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/vertical_draw.v Line: 75
+Warning (10240): Verilog HDL Always Construct warning at vertical_draw.v(49): inferring latch(es) for variable "nextState", which holds its previous value in one or more paths through the always construct File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/vertical_draw.v Line: 49
+Info (10041): Inferred latch for "nextState.VSLEN" at vertical_draw.v(49) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/vertical_draw.v Line: 49
+Info (10041): Inferred latch for "nextState.VFP" at vertical_draw.v(49) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/vertical_draw.v Line: 49
+Info (10041): Inferred latch for "nextState.VACTIVE" at vertical_draw.v(49) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/vertical_draw.v Line: 49
+Info (10041): Inferred latch for "nextState.VBP" at vertical_draw.v(49) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/vertical_draw.v Line: 49
+Info (12128): Elaborating entity "horizontal_draw" for hierarchy "horizontal_draw:h_draw" File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 56
+Warning (10235): Verilog HDL Always Construct warning at horizontal_draw.v(48): variable "h_back_porch" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/horizontal_draw.v Line: 48
+Warning (10235): Verilog HDL Always Construct warning at horizontal_draw.v(55): variable "h_back_porch" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/horizontal_draw.v Line: 55
+Warning (10235): Verilog HDL Always Construct warning at horizontal_draw.v(55): variable "h_active_pixels" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/horizontal_draw.v Line: 55
+Warning (10235): Verilog HDL Always Construct warning at horizontal_draw.v(62): variable "h_back_porch" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/horizontal_draw.v Line: 62
+Warning (10235): Verilog HDL Always Construct warning at horizontal_draw.v(62): variable "h_active_pixels" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/horizontal_draw.v Line: 62
+Warning (10235): Verilog HDL Always Construct warning at horizontal_draw.v(62): variable "h_front_porch" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/horizontal_draw.v Line: 62
+Warning (10235): Verilog HDL Always Construct warning at horizontal_draw.v(69): variable "h_total_pixels" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/horizontal_draw.v Line: 69
+Warning (10240): Verilog HDL Always Construct warning at horizontal_draw.v(43): inferring latch(es) for variable "nextState", which holds its previous value in one or more paths through the always construct File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/horizontal_draw.v Line: 43
+Warning (10030): Net "h_draw_flag" at horizontal_draw.v(14) has no driver or initial value, using a default initial value '0' File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/horizontal_draw.v Line: 14
+Info (10041): Inferred latch for "nextState.RESTART" at horizontal_draw.v(43) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/horizontal_draw.v Line: 43
+Info (10041): Inferred latch for "nextState.HSLEN" at horizontal_draw.v(43) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/horizontal_draw.v Line: 43
+Info (10041): Inferred latch for "nextState.HFP" at horizontal_draw.v(43) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/horizontal_draw.v Line: 43
+Info (10041): Inferred latch for "nextState.HACTIVE" at horizontal_draw.v(43) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/horizontal_draw.v Line: 43
+Info (10041): Inferred latch for "nextState.HBP" at horizontal_draw.v(43) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/horizontal_draw.v Line: 43
+Info (12128): Elaborating entity "image_output" for hierarchy "image_output:i_output" File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 69
+Critical Warning (10237): Verilog HDL warning at image_output.v(17): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 17
+Critical Warning (10237): Verilog HDL warning at image_output.v(19): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 19
+Warning (10034): Output port "pixel_clock" at image_output.v(4) has no driver File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 4
+Warning (10034): Output port "horz_sync" at image_output.v(6) has no driver File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 6
+Warning (10034): Output port "vert_sync" at image_output.v(7) has no driver File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 7
+Warning (10034): Output port "output_flag" at image_output.v(13) has no driver File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 13
+Warning (13039): The following bidirectional pins have no drivers
+    Warning (13040): bidirectional pin "I2C_SDA" has no driver File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 6
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "I2C_SCL" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 8
+    Warning (13410): Pin "HDMI_TX_D[0]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
+    Warning (13410): Pin "HDMI_TX_D[1]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
+    Warning (13410): Pin "HDMI_TX_D[2]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
+    Warning (13410): Pin "HDMI_TX_D[3]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
+    Warning (13410): Pin "HDMI_TX_D[4]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
+    Warning (13410): Pin "HDMI_TX_D[5]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
+    Warning (13410): Pin "HDMI_TX_D[6]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
+    Warning (13410): Pin "HDMI_TX_D[7]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
+    Warning (13410): Pin "HDMI_TX_D[8]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
+    Warning (13410): Pin "HDMI_TX_D[9]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
+    Warning (13410): Pin "HDMI_TX_D[10]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
+    Warning (13410): Pin "HDMI_TX_D[11]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
+    Warning (13410): Pin "HDMI_TX_D[12]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
+    Warning (13410): Pin "HDMI_TX_D[13]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
+    Warning (13410): Pin "HDMI_TX_D[14]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
+    Warning (13410): Pin "HDMI_TX_D[15]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
+    Warning (13410): Pin "HDMI_TX_D[16]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
+    Warning (13410): Pin "HDMI_TX_D[17]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
+    Warning (13410): Pin "HDMI_TX_D[18]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
+    Warning (13410): Pin "HDMI_TX_D[19]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
+    Warning (13410): Pin "HDMI_TX_D[20]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
+    Warning (13410): Pin "HDMI_TX_D[21]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
+    Warning (13410): Pin "HDMI_TX_D[22]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
+    Warning (13410): Pin "HDMI_TX_D[23]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
+    Warning (13410): Pin "HDMI_TX_CLK" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
+    Warning (13410): Pin "HDMI_TX_HS" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 11
+    Warning (13410): Pin "HDMI_TX_VS" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 12
+    Warning (13410): Pin "HDMI_TX_DE" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 14
+Info (17049): 23 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/output_files/HDMI_OUT.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "HDMI_TX_INT" File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 4
+    Warning (15610): No output dependent on input pin "_clock_50" File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 3
+Info (21057): Implemented 32 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 29 output pins
+    Info (21060): Implemented 1 bidirectional pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 61 warnings
+    Info: Peak virtual memory: 4818 megabytes
+    Info: Processing ended: Wed May 22 22:47:06 2019
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:23
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/output_files/HDMI_OUT.map.smsg.
+
+

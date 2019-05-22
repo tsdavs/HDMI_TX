@@ -1,0 +1,19 @@
+module vpg(
+	clk_50,
+	reset_n,
+	mode,
+	mode_change,
+	vpg_pclk,
+	vpg_de,
+	vpg_hs,
+	vpg_vs,
+	vpg_r,
+	vpg_g,
+	vpg_b
+);
+
+
+
+
+
+endmodule
