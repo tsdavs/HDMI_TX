@@ -68,4 +68,13 @@ image_output i_output (
 	.output_flag(_output_flag)
 );
 
+I2C_config i2c_config(
+	.clock_50(_clock_50),
+	.interrupt(HDMI_TX_INT),
+	.i2c_serial_data(I2C_SDA),
+	
+	.i2c_serial_clock(I2C_SCL)
+);
+
+
 endmodule

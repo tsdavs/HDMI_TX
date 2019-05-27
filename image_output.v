@@ -15,8 +15,10 @@ module image_output (
 always @ (posedge pixel_clock or posedge output_flag)
 	begin
 		data_enable <= 1'b1;
-		
-		{red, green, blue} <= {8'hFF,8'hFF,8'hFF};
+		if(output_flag == 1'b1)
+			begin
+				{red, green, blue} <= {8'hFF,8'hFF,8'hFF};
+			end
 	end
 
 

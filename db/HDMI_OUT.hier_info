@@ -1,8 +1,8 @@
 |HDMI_OUT
-_clock_50 => _clock_50.IN2
-HDMI_TX_INT => ~NO_FANOUT~
-I2C_SDA <> <UNC>
-I2C_SCL <= <GND>
+_clock_50 => _clock_50.IN3
+HDMI_TX_INT => HDMI_TX_INT.IN1
+I2C_SDA <> I2C_config:i2c_config.i2c_serial_data
+I2C_SCL <= I2C_config:i2c_config.i2c_serial_clock
 HDMI_TX_D[0] <= image_output:i_output.blue
 HDMI_TX_D[1] <= image_output:i_output.blue
 HDMI_TX_D[2] <= image_output:i_output.blue
@@ -218,30 +218,37 @@ pixel_clock <= <GND>
 data_enable <= <VCC>
 horz_sync <= <GND>
 vert_sync <= <GND>
-red[0] <= <VCC>
-red[1] <= <VCC>
-red[2] <= <VCC>
-red[3] <= <VCC>
-red[4] <= <VCC>
-red[5] <= <VCC>
-red[6] <= <VCC>
-red[7] <= <VCC>
-green[0] <= <VCC>
-green[1] <= <VCC>
-green[2] <= <VCC>
-green[3] <= <VCC>
-green[4] <= <VCC>
-green[5] <= <VCC>
-green[6] <= <VCC>
-green[7] <= <VCC>
-blue[0] <= <VCC>
-blue[1] <= <VCC>
-blue[2] <= <VCC>
-blue[3] <= <VCC>
-blue[4] <= <VCC>
-blue[5] <= <VCC>
-blue[6] <= <VCC>
-blue[7] <= <VCC>
+red[0] <= <GND>
+red[1] <= <GND>
+red[2] <= <GND>
+red[3] <= <GND>
+red[4] <= <GND>
+red[5] <= <GND>
+red[6] <= <GND>
+red[7] <= <GND>
+green[0] <= <GND>
+green[1] <= <GND>
+green[2] <= <GND>
+green[3] <= <GND>
+green[4] <= <GND>
+green[5] <= <GND>
+green[6] <= <GND>
+green[7] <= <GND>
+blue[0] <= <GND>
+blue[1] <= <GND>
+blue[2] <= <GND>
+blue[3] <= <GND>
+blue[4] <= <GND>
+blue[5] <= <GND>
+blue[6] <= <GND>
+blue[7] <= <GND>
 output_flag <= <GND>
+
+
+|HDMI_OUT|I2C_config:i2c_config
+clock_50 => ~NO_FANOUT~
+interrupt => ~NO_FANOUT~
+i2c_serial_data <> <UNC>
+i2c_serial_clock <= <GND>
 
 
