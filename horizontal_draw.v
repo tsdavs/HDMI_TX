@@ -15,9 +15,9 @@ module horizontal_draw (
 	output reg output_flag
 );
 
-reg [9:0] horz_pxl;
+reg [9:0] horz_pxl = 0;
 
-reg [2:0] currentState, nextState; //2 bit wide regs
+reg [2:0] currentState, nextState; //3 bit wide regs
 
 parameter HBP = 3'b000; //horizontal back porch
 parameter HACTIVE = 3'b001; //horizontal resolution
@@ -32,9 +32,9 @@ always @(posedge(clock_50))
 		currentState <= nextState;
 		
 		if(h_draw_flag == 1'b1) begin
-				horz_pxl = horz_pxl + 1'b1;
+				horz_pxl <= horz_pxl + 1'b1;
 		end else begin
-				horz_pxl = 1'b0;
+				horz_pxl <= 1'b0;
 		end
 	end
 	
@@ -90,29 +90,35 @@ always @(currentState)
 		case(currentState)
 			HBP:
 				begin
-					output_flag = 1'b0;
+					output_flag <= 1'b0;
+					h_draw_flag <= 1'b1;
+
 				end
 			HACTIVE:
 				begin
 					//draw to screen
-					output_flag = 1'b1;
+					output_flag <= 1'b1;
+					h_draw_flag <= 1'b1;
 				end
 			HFP:
 				begin
-					output_flag = 1'b0;
+					output_flag <= 1'b0;
+					h_draw_flag <= 1'b1;
 				end
 			HSLEN:
 				begin
-					output_flag = 1'b0;
+					output_flag <= 1'b0;
+					h_draw_flag <= 1'b1;
 				end
 			RESTART:
 				begin
-					output_flag = 1'b0;
+					output_flag <= 1'b0;
+					h_draw_flag <= 1'b0;
 				end
 			default:
 				begin
-					h_draw_flag = 1'b0;
-					output_flag = 1'b0;
+					h_draw_flag <= 1'b0;
+					output_flag <= 1'b0;
 				end
 			endcase
 	end	

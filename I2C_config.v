@@ -7,20 +7,35 @@ module I2C_config(
 	output i2c_serial_clock
 );
 
+wire i2c_serial_data_output; 
+
 reg [23:0] i2c_data;
 
-
-reg [5:0] lookup_table_index;
-reg [16:0] lookup_table_data;
-
-always @ (posedge clock_50)
-	begin
-		i2c_data <= {8'h72,lookup_table_data}
-		
+I2C_controller I2C_cont(
+	//inputs
+	.clock_50(clock_50),
+	.register_data(i2c_data[15:0]),
+	.slave_address(i2c_data[23:16]),
+	.i2c_serial_data_input(i2c_serial_data),
 	
-	end
+	//outputs
+	.i2c_serial_data_output(i2c_serial_data_output),
+	.i2c_serial_clock(i2c_serial_clock)
+);
 
-always
+reg [5:0] lookup_table_index = 0;
+reg [16:0] lookup_table_data;
+parameter lookup_table_size = 24;
+
+always @ (posedge(clock_50))
+	begin
+		if(lookup_table_index < lookup_table_size) begin
+			i2c_data <= {8'h72,lookup_table_data};//[SLAVE_ADDR,SUB_ADDR,DATA]
+			lookup_table_index = lookup_table_index + 1'b1; //increment
+		end
+	end
+	
+always @(posedge(clock_50))
 	begin
 		case(lookup_table_index)
 			0: lookup_table_data <= 16'h0100; //Set N Value (6144)
@@ -48,10 +63,10 @@ always
 			22: lookup_table_data <= 16'hde9c; //ADI required write
 			23: lookup_table_data <= 16'he460; //ADI required write
 			24: lookup_table_data <= 16'hfa7d; //Nbr of times to search for good phase
-			default: begin end
+			default: begin lookup_table_data <= 16'h0000e; end
 		endcase
 	end
 
-
+assign i2c_serial_data = i2c_serial_data_output ? 1'bz : 0; 
 
 endmodule
