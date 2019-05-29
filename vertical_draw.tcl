@@ -8,6 +8,8 @@ proc runSim {} {
 	add wave draw_flag
 	add wave vert_pxl
 	add wave horz_pxl
+	add wave h_sync
+	add wave v_sync
 
 	
 	#set radix of buses
@@ -28,7 +30,11 @@ proc runSim {} {
 	force -freeze h_active_pixels 12'd639;
 	force -freeze h_total_pixels 12'd799;
 
+	#view vsync
 	run 31000000
+
+	#view hsync
+	#run 80000
 	
 
 }

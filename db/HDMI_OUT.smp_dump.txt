@@ -1,6 +1,26 @@
 
 State Machine - |HDMI_OUT|I2C_config:i2c_config|currentState
-Name currentState.Setup currentState.restart currentState.Active 
-currentState.Setup 0 0 0 
-currentState.Active 1 0 1 
-currentState.restart 1 1 0 
+Name currentState.000 currentState.010 currentState.001 
+currentState.000 0 0 0 
+currentState.001 1 0 1 
+currentState.010 1 1 0 
+
+State Machine - |HDMI_OUT|I2C_config:i2c_config|I2C_controller:I2C_cont|bytes
+Name bytes.00000000 bytes.byte_num bytes.00000001 
+bytes.00000000 0 0 0 
+bytes.00000001 1 0 1 
+bytes.byte_num 1 1 0 
+
+State Machine - |HDMI_OUT|I2C_config:i2c_config|I2C_controller:I2C_cont|currentState
+Name currentState.1010 currentState.1001 currentState.1000 currentState.0111 currentState.0110 currentState.0101 currentState.0100 currentState.0011 currentState.0010 currentState.0001 currentState.0000 
+currentState.0000 0 0 0 0 0 0 0 0 0 0 0 
+currentState.0001 0 0 0 0 0 0 0 0 0 1 1 
+currentState.0010 0 0 0 0 0 0 0 0 1 0 1 
+currentState.0011 0 0 0 0 0 0 0 1 0 0 1 
+currentState.0100 0 0 0 0 0 0 1 0 0 0 1 
+currentState.0101 0 0 0 0 0 1 0 0 0 0 1 
+currentState.0110 0 0 0 0 1 0 0 0 0 0 1 
+currentState.0111 0 0 0 1 0 0 0 0 0 0 1 
+currentState.1000 0 0 1 0 0 0 0 0 0 0 1 
+currentState.1001 0 1 0 0 0 0 0 0 0 0 1 
+currentState.1010 1 0 0 0 0 0 0 0 0 0 1 

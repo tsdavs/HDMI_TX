@@ -1,5 +1,5 @@
-Analysis & Synthesis report for HDMI_OUT
-Mon May 27 18:48:01 2019
+Analysis & Elaboration report for HDMI_OUT
+Wed May 29 20:18:17 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -7,22 +7,15 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Synthesis Summary
-  3. Analysis & Synthesis Settings
-  4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |HDMI_OUT|I2C_config:i2c_config|currentState
-  9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Parameter Settings for User Entity Instance: I2C_config:i2c_config
- 12. Port Connectivity Checks: "I2C_config:i2c_config|I2C_controller:I2C_cont"
- 13. Port Connectivity Checks: "I2C_config:i2c_config"
- 14. Post-Synthesis Netlist Statistics for Top Partition
- 15. Elapsed Time Per Partition
- 16. Analysis & Synthesis Messages
- 17. Analysis & Synthesis Suppressed Messages
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Parameter Settings for User Entity Instance: I2C_config:i2c_config
+  5. Parameter Settings for User Entity Instance: I2C_config:i2c_config|I2C_controller:I2C_cont
+  6. Analysis & Elaboration Settings
+  7. Port Connectivity Checks: "image_output:i_output|vertical_draw:v_draw"
+  8. Port Connectivity Checks: "image_output:i_output"
+  9. Analysis & Elaboration Messages
+ 10. Analysis & Elaboration Suppressed Messages
 
 
 
@@ -45,31 +38,62 @@ refer to the applicable agreement for further details.
 
 
 
-+-------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                  ;
-+---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon May 27 18:48:01 2019       ;
-; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
-; Revision Name                   ; HDMI_OUT                                    ;
-; Top-level Entity Name           ; HDMI_OUT                                    ;
-; Family                          ; Cyclone V                                   ;
-; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 0                                           ;
-; Total pins                      ; 32                                          ;
-; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0                                           ;
-; Total DSP Blocks                ; 0                                           ;
-; Total HSSI RX PCSs              ; 0                                           ;
-; Total HSSI PMA RX Deserializers ; 0                                           ;
-; Total HSSI TX PCSs              ; 0                                           ;
-; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0                                           ;
-; Total DLLs                      ; 0                                           ;
-+---------------------------------+---------------------------------------------+
++-----------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                              ;
++-------------------------------+---------------------------------------------+
+; Analysis & Elaboration Status ; Successful - Wed May 29 20:18:17 2019       ;
+; Quartus Prime Version         ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                 ; HDMI_OUT                                    ;
+; Top-level Entity Name         ; HDMI_OUT                                    ;
+; Family                        ; Cyclone V                                   ;
+; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
+; Total registers               ; N/A until Partition Merge                   ;
+; Total pins                    ; N/A until Partition Merge                   ;
+; Total virtual pins            ; N/A until Partition Merge                   ;
+; Total block memory bits       ; N/A until Partition Merge                   ;
+; Total PLLs                    ; N/A until Partition Merge                   ;
+; Total DLLs                    ; N/A until Partition Merge                   ;
++-------------------------------+---------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: I2C_config:i2c_config ;
++-------------------+-------+----------------------------------------+
+; Parameter Name    ; Value ; Type                                   ;
++-------------------+-------+----------------------------------------+
+; lookup_table_size ; 24    ; Signed Integer                         ;
++-------------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: I2C_config:i2c_config|I2C_controller:I2C_cont ;
++----------------+----------+----------------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                           ;
++----------------+----------+----------------------------------------------------------------+
+; byte_num       ; 00000010 ; Unsigned Binary                                                ;
++----------------+----------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                             ;
+; Analysis & Elaboration Settings                                                                                           ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
@@ -155,185 +179,75 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                 ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                   ; Library ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------------------+---------+
-; HDMI_OUT.v                       ; yes             ; User Verilog HDL File  ; C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v       ;         ;
-; I2C_config.v                     ; yes             ; User Verilog HDL File  ; C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v     ;         ;
-; I2C_controller.v                 ; yes             ; User Verilog HDL File  ; C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_controller.v ;         ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------------------+---------+
-
-
-+--------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                  ;
-+---------------------------------------------+----------------+
-; Resource                                    ; Usage          ;
-+---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 0              ;
-;                                             ;                ;
-; Combinational ALUT usage for logic          ; 0              ;
-;     -- 7 input functions                    ; 0              ;
-;     -- 6 input functions                    ; 0              ;
-;     -- 5 input functions                    ; 0              ;
-;     -- 4 input functions                    ; 0              ;
-;     -- <=3 input functions                  ; 0              ;
-;                                             ;                ;
-; Dedicated logic registers                   ; 0              ;
-;                                             ;                ;
-; I/O pins                                    ; 32             ;
-;                                             ;                ;
-; Total DSP Blocks                            ; 0              ;
-;                                             ;                ;
-; Maximum fan-out node                        ; I2C_SDA~output ;
-; Maximum fan-out                             ; 1              ;
-; Total fan-out                               ; 33             ;
-; Average fan-out                             ; 0.51           ;
-+---------------------------------------------+----------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; |HDMI_OUT                  ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 32   ; 0            ; |HDMI_OUT           ; HDMI_OUT    ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-Encoding Type:  One-Hot
-+----------------------------------------------------------------------------------------+
-; State Machine - |HDMI_OUT|I2C_config:i2c_config|currentState                           ;
-+----------------------+--------------------+----------------------+---------------------+
-; Name                 ; currentState.Setup ; currentState.restart ; currentState.Active ;
-+----------------------+--------------------+----------------------+---------------------+
-; currentState.Setup   ; 0                  ; 0                    ; 0                   ;
-; currentState.Active  ; 1                  ; 0                    ; 1                   ;
-; currentState.restart ; 1                  ; 1                    ; 0                   ;
-+----------------------+--------------------+----------------------+---------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                          ;
-+----------------------------------------------------------------------+--------------------------------------+
-; Register name                                                        ; Reason for Removal                   ;
-+----------------------------------------------------------------------+--------------------------------------+
-; I2C_config:i2c_config|I2C_controller:I2C_cont|i2c_serial_data_output ; Stuck at GND due to stuck port clock ;
-; I2C_config:i2c_config|currentState.Active                            ; Stuck at GND due to stuck port clock ;
-; I2C_config:i2c_config|currentState.restart                           ; Stuck at GND due to stuck port clock ;
-; I2C_config:i2c_config|currentState.Setup                             ; Stuck at GND due to stuck port clock ;
-; Total Number of Removed Registers = 4                                ;                                      ;
-+----------------------------------------------------------------------+--------------------------------------+
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+--------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: I2C_config:i2c_config ;
-+-------------------+-------+----------------------------------------+
-; Parameter Name    ; Value ; Type                                   ;
-+-------------------+-------+----------------------------------------+
-; lookup_table_size ; 25    ; Signed Integer                         ;
-; Setup             ; 000   ; Unsigned Binary                        ;
-; Active            ; 001   ; Unsigned Binary                        ;
-; restart           ; 010   ; Unsigned Binary                        ;
-+-------------------+-------+----------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------+
-; Port Connectivity Checks: "I2C_config:i2c_config|I2C_controller:I2C_cont" ;
-+---------------------+-------+----------+----------------------------------+
-; Port                ; Type  ; Severity ; Details                          ;
-+---------------------+-------+----------+----------------------------------+
-; slave_address[7..5] ; Input ; Info     ; Stuck at VCC                     ;
-; slave_address[4..3] ; Input ; Info     ; Stuck at GND                     ;
-; slave_address[1..0] ; Input ; Info     ; Stuck at GND                     ;
-; slave_address[2]    ; Input ; Info     ; Stuck at VCC                     ;
-+---------------------+-------+----------+----------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "image_output:i_output|vertical_draw:v_draw"                                                            ;
++-------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                    ; Type   ; Severity ; Details                                                                             ;
++-------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; v_back_porch[11..6]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; v_back_porch[4..0]      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; v_back_porch[5]         ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; v_front_porch[11..4]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; v_front_porch[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; v_front_porch[3]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; v_front_porch[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; v_sync_length[11..1]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; v_sync_length[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; v_active_pixels[8..6]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; v_active_pixels[4..0]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; v_active_pixels[11..9]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; v_active_pixels[5]      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; v_total_pixels[3..2]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; v_total_pixels[11..10]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; v_total_pixels[8..4]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; v_total_pixels[1..0]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; v_total_pixels[9]       ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; h_back_porch[3..0]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; h_back_porch[11..6]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; h_back_porch[5]         ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; h_back_porch[4]         ; Input  ; Info     ; Stuck at GND                                                                        ;
+; h_front_porch[3..0]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; h_front_porch[11..4]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; h_sync_length[4..0]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; h_sync_length[11..7]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; h_sync_length[6]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; h_sync_length[5]        ; Input  ; Info     ; Stuck at GND                                                                        ;
+; h_active_pixels[6..0]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; h_active_pixels[11..10] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; h_active_pixels[8..7]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; h_active_pixels[9]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; h_total_pixels[9..8]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; h_total_pixels[4..0]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; h_total_pixels[11..10]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; h_total_pixels[7..5]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; draw_flag               ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------+
-; Port Connectivity Checks: "I2C_config:i2c_config" ;
-+----------+-------+----------+---------------------+
-; Port     ; Type  ; Severity ; Details             ;
-+----------+-------+----------+---------------------+
-; clock_50 ; Input ; Info     ; Stuck at GND        ;
-+----------+-------+----------+---------------------+
+; Port Connectivity Checks: "image_output:i_output" ;
++------+-------+----------+-------------------------+
+; Port ; Type  ; Severity ; Details                 ;
++------+-------+----------+-------------------------+
+; mode ; Input ; Info     ; Stuck at GND            ;
++------+-------+----------+-------------------------+
 
 
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; arriav_io_obuf        ; 1                           ;
-; arriav_lcell_comb     ; 1                           ;
-;     normal            ; 1                           ;
-;         0 data inputs ; 1                           ;
-; boundary_port         ; 32                          ;
-;                       ;                             ;
-; Max LUT depth         ; 0.00                        ;
-; Average LUT depth     ; 0.00                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
-
-
-+-------------------------------+
-; Analysis & Synthesis Messages ;
-+-------------------------------+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Synthesis
+Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon May 27 18:47:50 2019
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off HDMI_OUT -c HDMI_OUT
+    Info: Processing started: Wed May 29 20:18:07 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off HDMI_OUT -c HDMI_OUT --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file hdmi_out.v
     Info (12023): Found entity 1: HDMI_OUT File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 1
+Warning (10090): Verilog HDL syntax warning at vertical_draw.v(240): extra block comment delimiter characters /* within block comment File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/vertical_draw.v Line: 240
 Info (12021): Found 1 design units, including 1 entities, in source file vertical_draw.v
     Info (12023): Found entity 1: vertical_draw File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/vertical_draw.v Line: 8
-Info (12021): Found 1 design units, including 1 entities, in source file horizontal_draw.v
-    Info (12023): Found entity 1: horizontal_draw File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/horizontal_draw.v Line: 6
 Info (12021): Found 1 design units, including 1 entities, in source file image_output.v
     Info (12023): Found entity 1: image_output File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file i2c_config.v
@@ -341,143 +255,55 @@ Info (12021): Found 1 design units, including 1 entities, in source file i2c_con
 Info (12021): Found 1 design units, including 1 entities, in source file i2c_controller.v
     Info (12023): Found entity 1: I2C_controller File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_controller.v Line: 1
 Info (12127): Elaborating entity "HDMI_OUT" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at HDMI_OUT.v(20): object "_v_back_porch" assigned a value but never read File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 20
-Warning (10036): Verilog HDL or VHDL warning at HDMI_OUT.v(21): object "_v_front_porch" assigned a value but never read File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 21
-Warning (10036): Verilog HDL or VHDL warning at HDMI_OUT.v(22): object "_v_sync_length" assigned a value but never read File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 22
-Warning (10036): Verilog HDL or VHDL warning at HDMI_OUT.v(23): object "_v_active_pixels" assigned a value but never read File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 23
-Warning (10036): Verilog HDL or VHDL warning at HDMI_OUT.v(24): object "_v_total_pixels" assigned a value but never read File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 24
-Warning (10036): Verilog HDL or VHDL warning at HDMI_OUT.v(26): object "_h_back_porch" assigned a value but never read File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 26
-Warning (10036): Verilog HDL or VHDL warning at HDMI_OUT.v(27): object "_h_front_porch" assigned a value but never read File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 27
-Warning (10036): Verilog HDL or VHDL warning at HDMI_OUT.v(28): object "_h_sync_length" assigned a value but never read File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 28
-Warning (10036): Verilog HDL or VHDL warning at HDMI_OUT.v(29): object "_h_active_pixels" assigned a value but never read File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 29
-Warning (10036): Verilog HDL or VHDL warning at HDMI_OUT.v(30): object "_h_total_pixels" assigned a value but never read File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 30
-Warning (10036): Verilog HDL or VHDL warning at HDMI_OUT.v(32): object "output_mode" assigned a value but never read File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 32
-Warning (10230): Verilog HDL assignment warning at HDMI_OUT.v(34): truncated value with size 32 to match size of target (1) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 34
-Warning (10034): Output port "HDMI_TX_D" at HDMI_OUT.v(9) has no driver File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
-Warning (10034): Output port "HDMI_TX_CLK" at HDMI_OUT.v(10) has no driver File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
-Warning (10034): Output port "HDMI_TX_HS" at HDMI_OUT.v(11) has no driver File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 11
-Warning (10034): Output port "HDMI_TX_VS" at HDMI_OUT.v(12) has no driver File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 12
-Warning (10034): Output port "HDMI_TX_DE" at HDMI_OUT.v(14) has no driver File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 14
-Info (12128): Elaborating entity "I2C_config" for hierarchy "I2C_config:i2c_config" File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 80
-Warning (10235): Verilog HDL Always Construct warning at I2C_config.v(48): variable "lookup_table_index" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 48
-Warning (10235): Verilog HDL Always Construct warning at I2C_config.v(55): variable "interrupt" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 55
-Warning (10240): Verilog HDL Always Construct warning at I2C_config.v(43): inferring latch(es) for variable "nextState", which holds its previous value in one or more paths through the always construct File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 43
-Warning (10235): Verilog HDL Always Construct warning at I2C_config.v(77): variable "lookup_table_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 77
-Warning (10230): Verilog HDL assignment warning at I2C_config.v(77): truncated value with size 25 to match size of target (24) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 77
-Warning (10235): Verilog HDL Always Construct warning at I2C_config.v(78): variable "lookup_table_index" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 78
-Warning (10240): Verilog HDL Always Construct warning at I2C_config.v(72): inferring latch(es) for variable "i2c_data", which holds its previous value in one or more paths through the always construct File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 72
-Warning (10240): Verilog HDL Always Construct warning at I2C_config.v(72): inferring latch(es) for variable "lookup_table_index", which holds its previous value in one or more paths through the always construct File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 72
-Warning (10240): Verilog HDL Always Construct warning at I2C_config.v(96): inferring latch(es) for variable "lookup_table_data", which holds its previous value in one or more paths through the always construct File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 96
-Warning (10230): Verilog HDL assignment warning at I2C_config.v(126): truncated value with size 32 to match size of target (1) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 126
-Info (10041): Inferred latch for "lookup_table_data[0]" at I2C_config.v(96) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 96
-Info (10041): Inferred latch for "lookup_table_data[1]" at I2C_config.v(96) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 96
-Info (10041): Inferred latch for "lookup_table_data[2]" at I2C_config.v(96) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 96
-Info (10041): Inferred latch for "lookup_table_data[3]" at I2C_config.v(96) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 96
-Info (10041): Inferred latch for "lookup_table_data[4]" at I2C_config.v(96) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 96
-Info (10041): Inferred latch for "lookup_table_data[5]" at I2C_config.v(96) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 96
-Info (10041): Inferred latch for "lookup_table_data[6]" at I2C_config.v(96) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 96
-Info (10041): Inferred latch for "lookup_table_data[7]" at I2C_config.v(96) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 96
-Info (10041): Inferred latch for "lookup_table_data[8]" at I2C_config.v(96) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 96
-Info (10041): Inferred latch for "lookup_table_data[9]" at I2C_config.v(96) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 96
-Info (10041): Inferred latch for "lookup_table_data[10]" at I2C_config.v(96) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 96
-Info (10041): Inferred latch for "lookup_table_data[11]" at I2C_config.v(96) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 96
-Info (10041): Inferred latch for "lookup_table_data[12]" at I2C_config.v(96) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 96
-Info (10041): Inferred latch for "lookup_table_data[13]" at I2C_config.v(96) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 96
-Info (10041): Inferred latch for "lookup_table_data[14]" at I2C_config.v(96) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 96
-Info (10041): Inferred latch for "lookup_table_data[15]" at I2C_config.v(96) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 96
-Info (10041): Inferred latch for "lookup_table_data[16]" at I2C_config.v(96) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 96
-Info (10041): Inferred latch for "lookup_table_index[0]" at I2C_config.v(72) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 72
-Info (10041): Inferred latch for "lookup_table_index[1]" at I2C_config.v(72) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 72
-Info (10041): Inferred latch for "lookup_table_index[2]" at I2C_config.v(72) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 72
-Info (10041): Inferred latch for "lookup_table_index[3]" at I2C_config.v(72) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 72
-Info (10041): Inferred latch for "lookup_table_index[4]" at I2C_config.v(72) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 72
-Info (10041): Inferred latch for "lookup_table_index[5]" at I2C_config.v(72) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 72
-Info (10041): Inferred latch for "i2c_data[0]" at I2C_config.v(72) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 72
-Info (10041): Inferred latch for "i2c_data[1]" at I2C_config.v(72) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 72
-Info (10041): Inferred latch for "i2c_data[2]" at I2C_config.v(72) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 72
-Info (10041): Inferred latch for "i2c_data[3]" at I2C_config.v(72) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 72
-Info (10041): Inferred latch for "i2c_data[4]" at I2C_config.v(72) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 72
-Info (10041): Inferred latch for "i2c_data[5]" at I2C_config.v(72) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 72
-Info (10041): Inferred latch for "i2c_data[6]" at I2C_config.v(72) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 72
-Info (10041): Inferred latch for "i2c_data[7]" at I2C_config.v(72) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 72
-Info (10041): Inferred latch for "i2c_data[8]" at I2C_config.v(72) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 72
-Info (10041): Inferred latch for "i2c_data[9]" at I2C_config.v(72) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 72
-Info (10041): Inferred latch for "i2c_data[10]" at I2C_config.v(72) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 72
-Info (10041): Inferred latch for "i2c_data[11]" at I2C_config.v(72) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 72
-Info (10041): Inferred latch for "i2c_data[12]" at I2C_config.v(72) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 72
-Info (10041): Inferred latch for "i2c_data[13]" at I2C_config.v(72) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 72
-Info (10041): Inferred latch for "i2c_data[14]" at I2C_config.v(72) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 72
-Info (10041): Inferred latch for "i2c_data[15]" at I2C_config.v(72) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 72
-Info (10041): Inferred latch for "i2c_data[16]" at I2C_config.v(72) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 72
-Info (10041): Inferred latch for "i2c_data[17]" at I2C_config.v(72) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 72
-Info (10041): Inferred latch for "i2c_data[18]" at I2C_config.v(72) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 72
-Info (10041): Inferred latch for "i2c_data[19]" at I2C_config.v(72) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 72
-Info (10041): Inferred latch for "i2c_data[20]" at I2C_config.v(72) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 72
-Info (10041): Inferred latch for "i2c_data[21]" at I2C_config.v(72) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 72
-Info (10041): Inferred latch for "i2c_data[22]" at I2C_config.v(72) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 72
-Info (10041): Inferred latch for "i2c_data[23]" at I2C_config.v(72) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 72
-Info (10041): Inferred latch for "nextState.restart" at I2C_config.v(43) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 43
-Info (10041): Inferred latch for "nextState.Active" at I2C_config.v(43) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 43
-Info (10041): Inferred latch for "nextState.Setup" at I2C_config.v(43) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 43
-Info (12128): Elaborating entity "I2C_controller" for hierarchy "I2C_config:i2c_config|I2C_controller:I2C_cont" File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 24
-Warning (10230): Verilog HDL assignment warning at I2C_controller.v(14): truncated value with size 24 to match size of target (1) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_controller.v Line: 14
-Warning (10034): Output port "i2c_serial_clock" at I2C_controller.v(9) has no driver File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_controller.v Line: 9
-Warning (14026): LATCH primitive "I2C_config:i2c_config|lookup_table_index[5]" is permanently enabled File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 72
-Warning (14026): LATCH primitive "I2C_config:i2c_config|lookup_table_index[4]" is permanently enabled File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 72
-Warning (14026): LATCH primitive "I2C_config:i2c_config|lookup_table_index[3]" is permanently enabled File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 72
-Warning (14026): LATCH primitive "I2C_config:i2c_config|lookup_table_index[1]" is permanently enabled File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 72
-Warning (14026): LATCH primitive "I2C_config:i2c_config|lookup_table_index[2]" is permanently enabled File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 72
-Warning (14026): LATCH primitive "I2C_config:i2c_config|lookup_table_index[0]" is permanently enabled File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 72
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "I2C_SCL" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 8
-    Warning (13410): Pin "HDMI_TX_D[0]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
-    Warning (13410): Pin "HDMI_TX_D[1]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
-    Warning (13410): Pin "HDMI_TX_D[2]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
-    Warning (13410): Pin "HDMI_TX_D[3]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
-    Warning (13410): Pin "HDMI_TX_D[4]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
-    Warning (13410): Pin "HDMI_TX_D[5]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
-    Warning (13410): Pin "HDMI_TX_D[6]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
-    Warning (13410): Pin "HDMI_TX_D[7]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
-    Warning (13410): Pin "HDMI_TX_D[8]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
-    Warning (13410): Pin "HDMI_TX_D[9]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
-    Warning (13410): Pin "HDMI_TX_D[10]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
-    Warning (13410): Pin "HDMI_TX_D[11]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
-    Warning (13410): Pin "HDMI_TX_D[12]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
-    Warning (13410): Pin "HDMI_TX_D[13]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
-    Warning (13410): Pin "HDMI_TX_D[14]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
-    Warning (13410): Pin "HDMI_TX_D[15]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
-    Warning (13410): Pin "HDMI_TX_D[16]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
-    Warning (13410): Pin "HDMI_TX_D[17]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
-    Warning (13410): Pin "HDMI_TX_D[18]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
-    Warning (13410): Pin "HDMI_TX_D[19]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
-    Warning (13410): Pin "HDMI_TX_D[20]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
-    Warning (13410): Pin "HDMI_TX_D[21]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
-    Warning (13410): Pin "HDMI_TX_D[22]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
-    Warning (13410): Pin "HDMI_TX_D[23]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
-    Warning (13410): Pin "HDMI_TX_CLK" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
-    Warning (13410): Pin "HDMI_TX_HS" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 11
-    Warning (13410): Pin "HDMI_TX_VS" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 12
-    Warning (13410): Pin "HDMI_TX_DE" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 14
+Info (12128): Elaborating entity "image_output" for hierarchy "image_output:i_output" File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 45
+Critical Warning (10237): Verilog HDL warning at image_output.v(51): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 51
+Warning (10240): Verilog HDL Always Construct warning at image_output.v(49): inferring latch(es) for variable "red", which holds its previous value in one or more paths through the always construct File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 49
+Warning (10240): Verilog HDL Always Construct warning at image_output.v(49): inferring latch(es) for variable "green", which holds its previous value in one or more paths through the always construct File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 49
+Warning (10240): Verilog HDL Always Construct warning at image_output.v(49): inferring latch(es) for variable "blue", which holds its previous value in one or more paths through the always construct File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 49
+Warning (10034): Output port "pixel_clock" at image_output.v(5) has no driver File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 5
+Info (10041): Inferred latch for "blue[0]" at image_output.v(49) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 49
+Info (10041): Inferred latch for "blue[1]" at image_output.v(49) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 49
+Info (10041): Inferred latch for "blue[2]" at image_output.v(49) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 49
+Info (10041): Inferred latch for "blue[3]" at image_output.v(49) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 49
+Info (10041): Inferred latch for "blue[4]" at image_output.v(49) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 49
+Info (10041): Inferred latch for "blue[5]" at image_output.v(49) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 49
+Info (10041): Inferred latch for "blue[6]" at image_output.v(49) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 49
+Info (10041): Inferred latch for "blue[7]" at image_output.v(49) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 49
+Info (10041): Inferred latch for "green[0]" at image_output.v(49) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 49
+Info (10041): Inferred latch for "green[1]" at image_output.v(49) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 49
+Info (10041): Inferred latch for "green[2]" at image_output.v(49) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 49
+Info (10041): Inferred latch for "green[3]" at image_output.v(49) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 49
+Info (10041): Inferred latch for "green[4]" at image_output.v(49) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 49
+Info (10041): Inferred latch for "green[5]" at image_output.v(49) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 49
+Info (10041): Inferred latch for "green[6]" at image_output.v(49) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 49
+Info (10041): Inferred latch for "green[7]" at image_output.v(49) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 49
+Info (10041): Inferred latch for "red[0]" at image_output.v(49) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 49
+Info (10041): Inferred latch for "red[1]" at image_output.v(49) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 49
+Info (10041): Inferred latch for "red[2]" at image_output.v(49) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 49
+Info (10041): Inferred latch for "red[3]" at image_output.v(49) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 49
+Info (10041): Inferred latch for "red[4]" at image_output.v(49) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 49
+Info (10041): Inferred latch for "red[5]" at image_output.v(49) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 49
+Info (10041): Inferred latch for "red[6]" at image_output.v(49) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 49
+Info (10041): Inferred latch for "red[7]" at image_output.v(49) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 49
+Info (12128): Elaborating entity "vertical_draw" for hierarchy "image_output:i_output|vertical_draw:v_draw" File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 47
+Info (12128): Elaborating entity "I2C_config" for hierarchy "I2C_config:i2c_config" File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 57
+Warning (10230): Verilog HDL assignment warning at I2C_config.v(53): truncated value with size 25 to match size of target (24) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 53
+Warning (10230): Verilog HDL assignment warning at I2C_config.v(113): truncated value with size 32 to match size of target (1) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 113
+Info (12128): Elaborating entity "I2C_controller" for hierarchy "I2C_config:i2c_config|I2C_controller:I2C_cont" File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 30
+Warning (10230): Verilog HDL assignment warning at I2C_controller.v(61): truncated value with size 32 to match size of target (8) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_controller.v Line: 61
+Info (10264): Verilog HDL Case Statement information at I2C_controller.v(38): all case item expressions in this case statement are onehot File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_controller.v Line: 38
+Warning (10230): Verilog HDL assignment warning at I2C_controller.v(137): truncated value with size 24 to match size of target (1) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_controller.v Line: 137
 Info (144001): Generated suppressed messages file C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/output_files/HDMI_OUT.map.smsg
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 2 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "_clock_50" File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 3
-    Warning (15610): No output dependent on input pin "HDMI_TX_INT" File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 4
-Info (21057): Implemented 32 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 29 output pins
-    Info (21060): Implemented 1 bidirectional pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 69 warnings
-    Info: Peak virtual memory: 4819 megabytes
-    Info: Processing ended: Mon May 27 18:48:01 2019
-    Info: Elapsed time: 00:00:11
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 11 warnings
+    Info: Peak virtual memory: 4790 megabytes
+    Info: Processing ended: Wed May 29 20:18:17 2019
+    Info: Elapsed time: 00:00:10
     Info: Total CPU time (on all processors): 00:00:21
 
 
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
++--------------------------------------------+
+; Analysis & Elaboration Suppressed Messages ;
++--------------------------------------------+
 The suppressed messages can be found in C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/output_files/HDMI_OUT.map.smsg.
 
 

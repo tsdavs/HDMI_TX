@@ -1,5 +1,5 @@
 module I2C_config(
-	input clock_50,
+	input clock_25,
 	input interrupt,
 	
 	inout i2c_serial_data,
@@ -8,17 +8,23 @@ module I2C_config(
 );
 
 wire i2c_serial_data_output; 
+wire _stop;
+wire _ack; 
 
 reg [23:0] i2c_data;
+reg _start = 0;
 
 I2C_controller I2C_cont(
 	//inputs
-	.clock_50(clock_50),
+	.clock_25(clock_25),
 	.register_data(i2c_data[15:0]),
 	.slave_address(i2c_data[23:16]),
 	.i2c_serial_data_input(i2c_serial_data),
+	.start(_start),
 	
 	//outputs
+	.stop(_stop),
+	.ack(_ack),
 	.i2c_serial_data_output(i2c_serial_data_output),
 	.i2c_serial_clock(i2c_serial_clock)
 );
@@ -27,15 +33,52 @@ reg [5:0] lookup_table_index = 0;
 reg [16:0] lookup_table_data;
 parameter lookup_table_size = 24;
 
-always @ (posedge(clock_50))
+reg [2:0] currentState;
+
+reg setup = 1;
+
+always @ (posedge(clock_25))
 	begin
-		if(lookup_table_index < lookup_table_size) begin
-			i2c_data <= {8'h72,lookup_table_data};//[SLAVE_ADDR,SUB_ADDR,DATA]
-			lookup_table_index = lookup_table_index + 1'b1; //increment
+		if(setup == 1) begin 
+			lookup_table_index <= 0;
+			_start <= 1'b0;
+			currentState <= 0;
+			setup <= 0;
+		end else begin
+			if(lookup_table_index < lookup_table_size) begin
+				case(currentState)
+					0: 
+						begin
+							_start <= 1'b1;
+							i2c_data <= {8'h7A,lookup_table_data};//3-bytes -> [device_address,memory_address,payload]
+							currentState <= 1;
+						end
+					1: 
+						begin
+							if(_stop == 1) begin
+								if(_ack == 0) begin
+									currentState <= 2;
+								end else begin
+									currentState <= 0;
+									_start <= 0;
+								end
+							end
+						end
+					2: 
+						begin
+							lookup_table_index = lookup_table_index + 1'b1; //increment
+							currentState <= 0;
+						end	
+					default: 
+						begin
+							currentState <= 0;
+						end	
+				endcase
+			end
 		end
 	end
 	
-always @(posedge(clock_50))
+always @(posedge(clock_25))
 	begin
 		case(lookup_table_index)
 			0: lookup_table_data <= 16'h0100; //Set N Value (6144)
@@ -67,6 +110,6 @@ always @(posedge(clock_50))
 		endcase
 	end
 
-assign i2c_serial_data = i2c_serial_data_output ? 1'bz : 0; 
+assign i2c_serial_data = i2c_serial_data_output ? 1'bz : 0; // Tristate control for the I2C SDA pin.
 
 endmodule

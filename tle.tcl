@@ -12,7 +12,9 @@ proc runSim {} {
 	#50mhz clock
 	force -deposit _clock_50 1 0, 0 {20ps} -repeat 40	
 	
-	run 80000
+	force -deposit HDMI_TX_CLK 1 0, 0 {40ps} -repeat 80	
+
+	run 31000000
 	
 	
 	

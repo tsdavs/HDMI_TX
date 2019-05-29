@@ -13,21 +13,6 @@ module HDMI_OUT(
 	output HDMI_TX_DE //Data enable signal for digital video
 );
 
-wire _h_count_flag;
-wire _draw_flag = 0;
-
-wire [11:0] _v_back_porch = 12'd32; //33-1
-wire [11:0] _v_front_porch = 12'd9; //10-1
-wire [11:0] _v_sync_length = 12'd1; //2-1
-wire [11:0] _v_active_pixels = 12'd479; //478-1
-wire [11:0] _v_total_pixels = 12'd524; //525-1
-
-wire [11:0] _h_back_porch = 12'd47; //48-1
-wire [11:0] _h_front_porch = 12'd15; //16-1
-wire [11:0] _h_sync_length = 12'd95; //96-1
-wire [11:0] _h_active_pixels = 12'd639; //640-1
-wire [11:0] _h_total_pixels = 12'd799; //800-1
-
 wire [3:0] output_mode = 0; //640x480p60
 
 reg _clock_25 = 0;
@@ -44,46 +29,31 @@ always @(posedge(_clock_50))
 			end
 	end
 
-vertical_draw v_draw (
-	.clock_25(_clock_25),
-	
-	.v_back_porch(_v_back_porch),
-	.v_front_porch(_v_front_porch),
-	.v_sync_length(_v_sync_length),
-	.v_active_pixels(_v_active_pixels),
-	.v_total_pixels(_v_total_pixels),
-	
-	.h_back_porch(_h_back_porch),
-	.h_front_porch(_h_front_porch),
-	.h_sync_length(_h_sync_length),
-	.h_active_pixels(_h_active_pixels),
-	.h_total_pixels(_h_total_pixels),
-	
-	.h_count_flag(_h_count_flag),
-	.draw_flag(_draw_flag)
-
-);
-
 image_output i_output (
+	//inputs
 	.mode(output_mode),
-	
+	.clock_25(_clock_25),
+
+	//outputs
 	.pixel_clock(HDMI_TX_CLK),
 	.data_enable(HDMI_TX_DE),
 	.horz_sync(HDMI_TX_HS),
 	.vert_sync(HDMI_TX_VS),
 	.red(HDMI_TX_D[23:16]),
 	.green(HDMI_TX_D[15:8]),
-	.blue(HDMI_TX_D[7:0]),
-	.output_flag(_draw_flag)
+	.blue(HDMI_TX_D[7:0])
 );
 
 I2C_config i2c_config(
-	.clock_50(_clock_25),
+	//inputs
+	.clock_25(_clock_25),
 	.interrupt(HDMI_TX_INT),
+	
+	//inouts
 	.i2c_serial_data(I2C_SDA),
 	
+	//outputs
 	.i2c_serial_clock(I2C_SCL)
 );
-
 
 endmodule
