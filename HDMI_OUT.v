@@ -1,4 +1,5 @@
 module HDMI_OUT(
+	input key1, //for testing i2c loading
 
 	input _clock_50, //50 MHz fpga clock
 	input HDMI_TX_INT, //Interrupt signal
@@ -10,8 +11,16 @@ module HDMI_OUT(
 	output HDMI_TX_CLK, //Video Clock
 	output HDMI_TX_HS, //Horizontal sync
 	output HDMI_TX_VS, //Vertical sync
-	output HDMI_TX_DE //Data enable signal for digital video
+	output HDMI_TX_DE, //Data enable signal for digital video
+	
+	output sda_test,
+	output scl_test,
+	output reset
 );
+
+assign sda_test = I2C_SDA;
+assign scl_test = I2C_SCL;
+assign reset = key1;
 
 wire [3:0] output_mode = 0; //640x480p60
 
@@ -46,6 +55,7 @@ image_output i_output (
 
 I2C_config i2c_config(
 	//inputs
+	.reset(reset),
 	.clock_25(_clock_25),
 	.interrupt(HDMI_TX_INT),
 	

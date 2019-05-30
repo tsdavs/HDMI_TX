@@ -1,4 +1,6 @@
 |HDMI_OUT
+key1 => I2C_config:i2c_config.reset
+key1 => reset.DATAIN
 _clock_50 => _clock_25.CLK
 HDMI_TX_INT => I2C_config:i2c_config.interrupt
 I2C_SDA <> I2C_config:i2c_config.i2c_serial_data
@@ -31,6 +33,9 @@ HDMI_TX_CLK << image_output:i_output.pixel_clock
 HDMI_TX_HS << image_output:i_output.horz_sync
 HDMI_TX_VS << image_output:i_output.vert_sync
 HDMI_TX_DE << image_output:i_output.data_enable
+sda_test << sda_test.DB_MAX_OUTPUT_PORT_TYPE
+scl_test << I2C_config:i2c_config.i2c_serial_clock
+reset << key1.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |HDMI_OUT|image_output:i_output
@@ -270,6 +275,7 @@ draw_flag <= draw_flag~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |HDMI_OUT|I2C_config:i2c_config
+reset => ~NO_FANOUT~
 clock_25 => I2C_controller:I2C_cont.clock_25
 clock_25 => lookup_table_data[0].CLK
 clock_25 => lookup_table_data[1].CLK
@@ -327,22 +333,8 @@ i2c_serial_clock <= I2C_controller:I2C_cont.i2c_serial_clock
 
 
 |HDMI_OUT|I2C_config:i2c_config|I2C_controller:I2C_cont
-clock_25 => setup.CLK
-clock_25 => stop~reg0.CLK
-clock_25 => count[0].CLK
-clock_25 => count[1].CLK
-clock_25 => count[2].CLK
-clock_25 => count[3].CLK
-clock_25 => count[4].CLK
-clock_25 => count[5].CLK
-clock_25 => count[6].CLK
-clock_25 => count[7].CLK
-clock_25 => ack~reg0.CLK
-clock_25 => i2c_serial_clock~reg0.CLK
-clock_25 => i2c_serial_data_output~reg0.CLK
-clock_25 => bytes~4.DATAIN
-clock_25 => currentState~12.DATAIN
-register_data[0] => i2c_serial_data_output~reg0.DATAIN
+clock_25 => clock_25.IN1
+register_data[0] => ~NO_FANOUT~
 register_data[1] => ~NO_FANOUT~
 register_data[2] => ~NO_FANOUT~
 register_data[3] => ~NO_FANOUT~
@@ -358,7 +350,7 @@ register_data[12] => ~NO_FANOUT~
 register_data[13] => ~NO_FANOUT~
 register_data[14] => ~NO_FANOUT~
 register_data[15] => ~NO_FANOUT~
-slave_address[0] => ~NO_FANOUT~
+slave_address[0] => Selector0.IN5
 slave_address[1] => ~NO_FANOUT~
 slave_address[2] => ~NO_FANOUT~
 slave_address[3] => ~NO_FANOUT~
@@ -367,24 +359,66 @@ slave_address[5] => ~NO_FANOUT~
 slave_address[6] => ~NO_FANOUT~
 slave_address[7] => ~NO_FANOUT~
 i2c_serial_data_input => ack.OUTPUTSELECT
-start => currentState.DATAB
-start => ack.OUTPUTSELECT
-start => stop.OUTPUTSELECT
-start => currentState.OUTPUTSELECT
-start => currentState.OUTPUTSELECT
-start => currentState.OUTPUTSELECT
-start => currentState.OUTPUTSELECT
-start => currentState.OUTPUTSELECT
-start => currentState.OUTPUTSELECT
-start => currentState.OUTPUTSELECT
-start => currentState.OUTPUTSELECT
-start => currentState.OUTPUTSELECT
-start => currentState.OUTPUTSELECT
-start => currentState.OUTPUTSELECT
-start => currentState.DATAB
+start => ~NO_FANOUT~
 stop <= stop~reg0.DB_MAX_OUTPUT_PORT_TYPE
 ack <= ack~reg0.DB_MAX_OUTPUT_PORT_TYPE
 i2c_serial_data_output <= i2c_serial_data_output~reg0.DB_MAX_OUTPUT_PORT_TYPE
 i2c_serial_clock <= i2c_serial_clock~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HDMI_OUT|I2C_config:i2c_config|I2C_controller:I2C_cont|counter:counter_100khz
+MR_n => counterValue.OUTPUTSELECT
+MR_n => counterValue.OUTPUTSELECT
+MR_n => counterValue.OUTPUTSELECT
+MR_n => counterValue.OUTPUTSELECT
+MR_n => counterValue.OUTPUTSELECT
+MR_n => counterValue.OUTPUTSELECT
+MR_n => counterValue.OUTPUTSELECT
+MR_n => counterValue.OUTPUTSELECT
+MR_n => TC_out~reg0.ENA
+CEP => TC_out.OUTPUTSELECT
+CEP => counterValue.OUTPUTSELECT
+CEP => counterValue.OUTPUTSELECT
+CEP => counterValue.OUTPUTSELECT
+CEP => counterValue.OUTPUTSELECT
+CEP => counterValue.OUTPUTSELECT
+CEP => counterValue.OUTPUTSELECT
+CEP => counterValue.OUTPUTSELECT
+CEP => counterValue.OUTPUTSELECT
+PE_n => counterValue.OUTPUTSELECT
+PE_n => counterValue.OUTPUTSELECT
+PE_n => counterValue.OUTPUTSELECT
+PE_n => counterValue.OUTPUTSELECT
+PE_n => counterValue.OUTPUTSELECT
+PE_n => counterValue.OUTPUTSELECT
+PE_n => counterValue.OUTPUTSELECT
+PE_n => counterValue.OUTPUTSELECT
+PE_n => TC_out.OUTPUTSELECT
+Dn[0] => counterValue.DATAB
+Dn[1] => counterValue.DATAB
+Dn[2] => counterValue.DATAB
+Dn[3] => counterValue.DATAB
+Dn[4] => counterValue.DATAB
+Dn[5] => counterValue.DATAB
+Dn[6] => counterValue.DATAB
+Dn[7] => counterValue.DATAB
+clock => TC_out~reg0.CLK
+clock => counterValue[0].CLK
+clock => counterValue[1].CLK
+clock => counterValue[2].CLK
+clock => counterValue[3].CLK
+clock => counterValue[4].CLK
+clock => counterValue[5].CLK
+clock => counterValue[6].CLK
+clock => counterValue[7].CLK
+Qn_out[0] <= counterValue[0].DB_MAX_OUTPUT_PORT_TYPE
+Qn_out[1] <= counterValue[1].DB_MAX_OUTPUT_PORT_TYPE
+Qn_out[2] <= counterValue[2].DB_MAX_OUTPUT_PORT_TYPE
+Qn_out[3] <= counterValue[3].DB_MAX_OUTPUT_PORT_TYPE
+Qn_out[4] <= counterValue[4].DB_MAX_OUTPUT_PORT_TYPE
+Qn_out[5] <= counterValue[5].DB_MAX_OUTPUT_PORT_TYPE
+Qn_out[6] <= counterValue[6].DB_MAX_OUTPUT_PORT_TYPE
+Qn_out[7] <= counterValue[7].DB_MAX_OUTPUT_PORT_TYPE
+TC_out <= TC_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 

@@ -11,7 +11,7 @@ proc runSim {} {
 	
 	#50mhz clock
 	force -deposit clock_25 1 0, 0 {40ps} -repeat 80	
-	run 8000
+	run 60000000
 	
 
 }

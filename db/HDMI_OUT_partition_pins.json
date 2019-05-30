@@ -16,7 +16,23 @@
 					"strict" : false
 				},
 				{
+					"name" : "sda_test",
+					"strict" : false
+				},
+				{
+					"name" : "scl_test",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
 					"name" : "I2C_SDA",
+					"strict" : false
+				},
+				{
+					"name" : "key1",
 					"strict" : false
 				},
 				{

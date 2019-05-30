@@ -1,2 +1,2 @@
-Warning (10268): Verilog HDL information at vertical_draw.v(45): always construct contains both blocking and non-blocking assignments File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/vertical_draw.v Line: 45
-Warning (10268): Verilog HDL information at I2C_config.v(40): always construct contains both blocking and non-blocking assignments File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 40
+Warning (10268): Verilog HDL information at vertical_draw.v(37): always construct contains both blocking and non-blocking assignments File: C:/Users/tsdavs/Documents/Quartus/HDMI_TX/vertical_draw.v Line: 37
+Warning (10268): Verilog HDL information at I2C_config.v(41): always construct contains both blocking and non-blocking assignments File: C:/Users/tsdavs/Documents/Quartus/HDMI_TX/I2C_config.v Line: 41

@@ -46,7 +46,7 @@ vertical_draw v_draw (
 	.draw_flag(_draw_flag)
 );
 
-always @(posedge pixel_clock or posedge _draw_flag)
+always @(posedge clock_25 or posedge _draw_flag) //pixel clock
 	begin
 		data_enable <= 1'b1;
 		if(_draw_flag == 1'b1)
