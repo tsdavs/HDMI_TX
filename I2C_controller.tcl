@@ -10,7 +10,7 @@ proc runSim {} {
 	property wave -radix hex *
 	
 	#50mhz clock
-	force -deposit clock_25 1 0, 0 {40ps} -repeat 80	
+	force -deposit clock_100khz 1 0, 0 {5000ps} -repeat 10000	
 	
 	force -freeze register_data 16'h0100
 	force -freeze slave_address 8'h72

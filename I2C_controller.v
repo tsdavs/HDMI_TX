@@ -46,7 +46,12 @@ always @(posedge(clock_100khz))
 					count <= 0;
 					stop <= 1;
 					bytes <= 0;
-					currentState <= 1;
+					
+					if(start) begin
+						currentState <= 1;
+					end else if(!start) begin
+						currentState <= 0;
+					end
 				end
 		
 			1: 
@@ -54,7 +59,7 @@ always @(posedge(clock_100khz))
 					i2c_serial_data_output <= 1'b0;
 					i2c_serial_clock <= 1'b1;
 					slave_address_reg = slave_address;
-					slave_address_reg = slave_address_reg | 8'b00000001;
+					slave_address_reg = slave_address_reg | 8'b00000000; //8'b00000001;
 					slave_address_write <= slave_address_reg; //write
 					currentState <= 2;
 				end
@@ -93,10 +98,14 @@ always @(posedge(clock_100khz))
 							currentState <= 2;
 							
 							if(bytes == 0) begin
-								slave_address_write <= {register_data[15:8], 1'b1};
+								//slave_address_write <= register_data[15:8];
+								//slave_address_write = slave_address_write | 9'b000000000;
+								slave_address_write <= {register_data[15:8], 1'b0};
 								bytes <= 1;
 							end else if(bytes == 1) begin
-								slave_address_write <= {register_data[15:8], 1'b1};
+								//slave_address_write <= register_data[7:0];
+								//slave_address_write = slave_address_write | 9'b000000000;
+								slave_address_write <= {register_data[7:0], 1'b0};
 								bytes <= 2;
 							end
 						end
@@ -144,6 +153,10 @@ always @(posedge(clock_100khz))
 						stop <= 0;
 						currentState <= 0;
 					//end
+				end
+			11:
+				begin
+				
 				end
 				
 			default: 

@@ -45,7 +45,7 @@ I2C_controller I2C_cont(
 
 reg [5:0] lookup_table_index = 0;
 reg [16:0] lookup_table_data;
-parameter lookup_table_size = 24;
+parameter lookup_table_size = 25; //to include default
 
 reg [2:0] currentState = 0;
 
@@ -61,7 +61,7 @@ always @ (posedge(clock_100khz))
 				currentState <= 0;
 				setup <= 0;
 			end else begin
-				if(lookup_table_index < lookup_table_size) begin
+				//if(lookup_table_index <= lookup_table_size) begin
 					case(currentState)
 						0: 
 							begin
@@ -90,7 +90,7 @@ always @ (posedge(clock_100khz))
 								currentState <= 0;
 							end	
 					endcase
-				end
+				//end
 			end
 		//end//reset - remove this later
 	end
