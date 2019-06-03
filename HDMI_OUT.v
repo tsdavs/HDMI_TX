@@ -22,8 +22,6 @@ assign sda_test = I2C_SDA;
 assign scl_test = I2C_SCL;
 assign reset = key1;
 
-wire [3:0] output_mode = 0; //640x480p60
-
 reg _clock_25 = 0;
 
 always @(posedge(_clock_50))
@@ -40,7 +38,6 @@ always @(posedge(_clock_50))
 
 image_output i_output (
 	//inputs
-	.mode(output_mode),
 	.clock_25(_clock_25),
 
 	//outputs

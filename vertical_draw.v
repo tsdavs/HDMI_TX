@@ -6,7 +6,7 @@
 //ref: https://www.digi.com/resources/documentation/digidocs/90001945-13/reference/yocto/r_an_adding_custom_display.htm
 
 module vertical_draw (
-	input clock_25,
+	input pixel_clock,
 	input [11:0] v_back_porch,
 	input [11:0] v_front_porch,
 	input [11:0] v_sync_length,
@@ -22,7 +22,6 @@ module vertical_draw (
 	output reg h_sync,
 	output reg v_sync,
 	output reg draw_flag
-
 );
 
 reg h_count_flag;
@@ -30,17 +29,24 @@ reg h_count_flag;
 reg [9:0] vert_pxl = 0;
 reg [9:0] horz_pxl = 0;
 
-reg vert_setup = 1;
-reg horz_setup = 1;
+//reg vert_setup = 1;
+//reg horz_setup = 1;
+
+initial begin
+	//draw_flag <= 0;
+	//h_sync <= 1'b0;
+	//h_count_flag = 1'b0;
+	//v_sync = 1'b0;
+end
 
 //vertical drawing loop
-always @(posedge(clock_25))
+always @(posedge(pixel_clock))
 	begin
-		if(vert_setup == 1) begin 
-			h_count_flag = 1'b0;
-			v_sync = 1'b0;
-			vert_setup = 0;
-		end else begin
+		/*if(vert_setup == 1) begin 
+			//h_count_flag = 1'b0;
+			//v_sync = 1'b0;
+			vert_setup = 0;*/
+		//end else begin
 			if(h_count_flag == 1'b0) begin
 				//increment through vert pixels when not horz drawing
 				vert_pxl = vert_pxl + 1'b1;
@@ -68,14 +74,14 @@ always @(posedge(clock_25))
 			if(vert_pxl > v_total_pixels)begin
 				vert_pxl <= 1'b0;
 			end	
-		end
+		//end
 
 		//horizontal drawing loop
-		if(horz_setup == 1) begin 
-			draw_flag = 1'b0;
-			h_sync = 1'b0;
-			horz_setup = 0;
-		end else begin	
+		/*if(horz_setup == 1) begin 
+			//draw_flag <= 1'b0;
+			//h_sync <= 1'b0;
+			horz_setup <= 0;*/
+		//end else begin	
 			if(horz_pxl > h_back_porch && horz_pxl < (h_back_porch + h_active_pixels)) begin
 				//start drawing 
 				draw_flag <= 1'b1;
@@ -95,6 +101,6 @@ always @(posedge(clock_25))
 				horz_pxl <= 1'b0;
 				h_count_flag <= 1'b0;
 			end		
-		end
+		//end
 	end
 endmodule

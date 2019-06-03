@@ -2,148 +2,148 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1100mV 100C Model Setup '_clock_25'
-Slack : -4.492
-TNS   : -124.531
-
-Type  : Slow 1100mV 100C Model Setup 'I2C_config:i2c_config|I2C_controller:I2C_cont|counter:counter_100khz|TC_out'
-Slack : -2.886
-TNS   : -59.854
+Type  : Slow 1100mV 100C Model Setup 'I2C_config:i2c_config|counter:counter_100khz|TC_out'
+Slack : -3.336
+TNS   : -158.086
 
 Type  : Slow 1100mV 100C Model Setup '_clock_50'
-Slack : -2.830
-TNS   : -2.830
+Slack : -2.720
+TNS   : -2.720
+
+Type  : Slow 1100mV 100C Model Setup '_clock_25'
+Slack : -2.417
+TNS   : -59.105
 
 Type  : Slow 1100mV 100C Model Hold '_clock_25'
-Slack : 0.658
+Slack : 0.440
 TNS   : 0.000
 
-Type  : Slow 1100mV 100C Model Hold 'I2C_config:i2c_config|I2C_controller:I2C_cont|counter:counter_100khz|TC_out'
-Slack : 0.938
+Type  : Slow 1100mV 100C Model Hold 'I2C_config:i2c_config|counter:counter_100khz|TC_out'
+Slack : 0.525
 TNS   : 0.000
 
 Type  : Slow 1100mV 100C Model Hold '_clock_50'
-Slack : 1.011
+Slack : 0.901
 TNS   : 0.000
 
 Type  : Slow 1100mV 100C Model Minimum Pulse Width '_clock_50'
-Slack : -0.608
-TNS   : -1.146
+Slack : -0.643
+TNS   : -1.181
+
+Type  : Slow 1100mV 100C Model Minimum Pulse Width 'I2C_config:i2c_config|counter:counter_100khz|TC_out'
+Slack : -0.538
+TNS   : -59.836
 
 Type  : Slow 1100mV 100C Model Minimum Pulse Width '_clock_25'
 Slack : -0.538
-TNS   : -29.579
+TNS   : -23.087
 
-Type  : Slow 1100mV 100C Model Minimum Pulse Width 'I2C_config:i2c_config|I2C_controller:I2C_cont|counter:counter_100khz|TC_out'
-Slack : -0.538
-TNS   : -23.226
-
-Type  : Slow 1100mV -40C Model Setup '_clock_25'
-Slack : -4.501
-TNS   : -128.949
-
-Type  : Slow 1100mV -40C Model Setup 'I2C_config:i2c_config|I2C_controller:I2C_cont|counter:counter_100khz|TC_out'
-Slack : -2.864
-TNS   : -59.366
+Type  : Slow 1100mV -40C Model Setup 'I2C_config:i2c_config|counter:counter_100khz|TC_out'
+Slack : -3.476
+TNS   : -157.387
 
 Type  : Slow 1100mV -40C Model Setup '_clock_50'
-Slack : -2.605
-TNS   : -2.605
+Slack : -2.460
+TNS   : -2.460
+
+Type  : Slow 1100mV -40C Model Setup '_clock_25'
+Slack : -2.406
+TNS   : -59.154
 
 Type  : Slow 1100mV -40C Model Hold '_clock_25'
-Slack : 0.598
+Slack : 0.413
 TNS   : 0.000
 
-Type  : Slow 1100mV -40C Model Hold 'I2C_config:i2c_config|I2C_controller:I2C_cont|counter:counter_100khz|TC_out'
-Slack : 0.910
+Type  : Slow 1100mV -40C Model Hold 'I2C_config:i2c_config|counter:counter_100khz|TC_out'
+Slack : 0.494
 TNS   : 0.000
 
 Type  : Slow 1100mV -40C Model Hold '_clock_50'
-Slack : 0.931
+Slack : 0.748
 TNS   : 0.000
 
 Type  : Slow 1100mV -40C Model Minimum Pulse Width '_clock_50'
-Slack : -0.617
-TNS   : -1.155
+Slack : -0.635
+TNS   : -1.173
+
+Type  : Slow 1100mV -40C Model Minimum Pulse Width 'I2C_config:i2c_config|counter:counter_100khz|TC_out'
+Slack : -0.538
+TNS   : -57.712
 
 Type  : Slow 1100mV -40C Model Minimum Pulse Width '_clock_25'
 Slack : -0.538
-TNS   : -29.268
-
-Type  : Slow 1100mV -40C Model Minimum Pulse Width 'I2C_config:i2c_config|I2C_controller:I2C_cont|counter:counter_100khz|TC_out'
-Slack : -0.538
-TNS   : -23.293
+TNS   : -22.789
 
 Type  : Fast 1100mV 100C Model Setup '_clock_50'
-Slack : -2.085
-TNS   : -2.085
+Slack : -2.201
+TNS   : -2.201
+
+Type  : Fast 1100mV 100C Model Setup 'I2C_config:i2c_config|counter:counter_100khz|TC_out'
+Slack : -1.602
+TNS   : -60.528
 
 Type  : Fast 1100mV 100C Model Setup '_clock_25'
-Slack : -1.930
-TNS   : -48.436
-
-Type  : Fast 1100mV 100C Model Setup 'I2C_config:i2c_config|I2C_controller:I2C_cont|counter:counter_100khz|TC_out'
-Slack : -1.375
-TNS   : -20.916
+Slack : -0.839
+TNS   : -22.859
 
 Type  : Fast 1100mV 100C Model Hold '_clock_25'
-Slack : 0.256
-TNS   : 0.000
+Slack : -0.096
+TNS   : -0.584
 
-Type  : Fast 1100mV 100C Model Hold 'I2C_config:i2c_config|I2C_controller:I2C_cont|counter:counter_100khz|TC_out'
-Slack : 0.388
-TNS   : 0.000
+Type  : Fast 1100mV 100C Model Hold 'I2C_config:i2c_config|counter:counter_100khz|TC_out'
+Slack : -0.054
+TNS   : -0.054
 
 Type  : Fast 1100mV 100C Model Hold '_clock_50'
-Slack : 1.040
+Slack : 1.124
 TNS   : 0.000
 
 Type  : Fast 1100mV 100C Model Minimum Pulse Width '_clock_50'
-Slack : -0.622
-TNS   : -1.042
+Slack : -0.653
+TNS   : -1.103
+
+Type  : Fast 1100mV 100C Model Minimum Pulse Width 'I2C_config:i2c_config|counter:counter_100khz|TC_out'
+Slack : 0.002
+TNS   : 0.000
 
 Type  : Fast 1100mV 100C Model Minimum Pulse Width '_clock_25'
-Slack : 0.053
+Slack : 0.069
 TNS   : 0.000
-
-Type  : Fast 1100mV 100C Model Minimum Pulse Width 'I2C_config:i2c_config|I2C_controller:I2C_cont|counter:counter_100khz|TC_out'
-Slack : 0.133
-TNS   : 0.000
-
-Type  : Fast 1100mV -40C Model Setup '_clock_25'
-Slack : -1.621
-TNS   : -40.858
 
 Type  : Fast 1100mV -40C Model Setup '_clock_50'
-Slack : -1.615
-TNS   : -1.615
+Slack : -1.696
+TNS   : -1.696
 
-Type  : Fast 1100mV -40C Model Setup 'I2C_config:i2c_config|I2C_controller:I2C_cont|counter:counter_100khz|TC_out'
-Slack : -1.089
-TNS   : -16.385
+Type  : Fast 1100mV -40C Model Setup 'I2C_config:i2c_config|counter:counter_100khz|TC_out'
+Slack : -1.275
+TNS   : -46.908
+
+Type  : Fast 1100mV -40C Model Setup '_clock_25'
+Slack : -0.684
+TNS   : -17.576
 
 Type  : Fast 1100mV -40C Model Hold '_clock_25'
-Slack : 0.203
-TNS   : 0.000
+Slack : -0.131
+TNS   : -1.512
 
-Type  : Fast 1100mV -40C Model Hold 'I2C_config:i2c_config|I2C_controller:I2C_cont|counter:counter_100khz|TC_out'
-Slack : 0.336
-TNS   : 0.000
+Type  : Fast 1100mV -40C Model Hold 'I2C_config:i2c_config|counter:counter_100khz|TC_out'
+Slack : -0.107
+TNS   : -0.217
 
 Type  : Fast 1100mV -40C Model Hold '_clock_50'
-Slack : 0.697
+Slack : 0.715
 TNS   : 0.000
 
 Type  : Fast 1100mV -40C Model Minimum Pulse Width '_clock_50'
-Slack : -0.693
-TNS   : -1.271
+Slack : -0.698
+TNS   : -1.280
 
-Type  : Fast 1100mV -40C Model Minimum Pulse Width '_clock_25'
-Slack : 0.091
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'I2C_config:i2c_config|counter:counter_100khz|TC_out'
+Slack : 0.063
 TNS   : 0.000
 
-Type  : Fast 1100mV -40C Model Minimum Pulse Width 'I2C_config:i2c_config|I2C_controller:I2C_cont|counter:counter_100khz|TC_out'
-Slack : 0.130
+Type  : Fast 1100mV -40C Model Minimum Pulse Width '_clock_25'
+Slack : 0.107
 TNS   : 0.000
 
 ------------------------------------------------------------

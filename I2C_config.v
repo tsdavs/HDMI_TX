@@ -127,6 +127,6 @@ always @(posedge(clock_25))
 		endcase
 	end
 
-assign i2c_serial_data = i2c_serial_data_output ? 1'bz : 0; // Tristate control for the I2C SDA pin.
+assign i2c_serial_data = i2c_serial_data_output ? 1'b1 : 0; // Tristate control for the I2C SDA pin.
 
 endmodule

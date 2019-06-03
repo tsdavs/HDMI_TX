@@ -9,7 +9,7 @@ proc runSim {} {
 	#set radix of buses
 	property wave -radix hex *
 	
-	#50mhz clock
+	#100khz clock
 	force -deposit clock_100khz 1 0, 0 {5000ps} -repeat 10000	
 	
 	force -freeze register_data 16'h0100

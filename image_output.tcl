@@ -4,6 +4,13 @@ proc runSim {} {
 
 	#add all wf
 	add wave *
+	#add wave pixel_clock
+	#add wave red
+	#add wave green
+	#add wave blue
+	#add wave _draw_flag
+	#add wave data_enable
+	#add wave draw
 	
 	#set radix of buses
 	property wave -radix hex *
@@ -11,7 +18,7 @@ proc runSim {} {
 	#50mhz clock
 	force -deposit pixel_clock 1 0, 0 {40ps} -repeat 80	
 
-	force -freeze _draw_flag 1
+	#force -freeze _draw_flag 1
 
 	run 31000000
 	

@@ -14,25 +14,11 @@ module I2C_controller(
 reg [7:0] count = 0;
 reg [8:0] slave_address_write;
 reg [3:0] currentState = 0;
-reg setup = 1;
 
 reg [7:0] bytes = 0;
 parameter [7:0] byte_num = 2;
 
 reg [7:0] slave_address_reg;
-
-/*wire clock_100khz;
-
-counter counter_100khz(
-	.MR_n(1'b1),
-	.CEP(1'b1),
-	.PE_n(1'b1),
-	.Dn(),
-	.clock(clock_25),
-	
-	.Qn_out(),
-	.TC_out(clock_100khz)
-);*/
 
 always @(posedge(clock_100khz))
 	begin
@@ -75,7 +61,6 @@ always @(posedge(clock_100khz))
 			3: 
 				begin
 					{i2c_serial_data_output, slave_address_write} <= {slave_address_write, 1'b0};
-					//i2c_serial_data_output <= slave_address;
 					currentState <= 4;
 				end
 				
@@ -119,19 +104,22 @@ always @(posedge(clock_100khz))
 				
 			6: 
 				begin
-					{i2c_serial_data_output, i2c_serial_clock} <= 2'b00; 
+					i2c_serial_data_output <= 1'b0;
+					i2c_serial_clock <= 1'b0;
 					currentState <= 7;
 				end
 				
 			7: 
 				begin
-					{i2c_serial_data_output, i2c_serial_clock} <= 2'b01; 
+					i2c_serial_data_output <= 1'b0;
+					i2c_serial_clock <= 1'b1;
 					currentState <= 8;
 				end
 				
 			8: 
 				begin
-					{i2c_serial_data_output, i2c_serial_clock} <= 2'b11; 
+					i2c_serial_data_output <= 1'b1;
+					i2c_serial_clock <= 1'b1;
 					currentState <= 9;
 				end
 				
@@ -148,11 +136,9 @@ always @(posedge(clock_100khz))
 				
 			10: 
 				begin
-					//if(start == 0) begin
-						ack <= 0;
-						stop <= 0;
-						currentState <= 0;
-					//end
+					ack <= 0;
+					stop <= 0;
+					currentState <= 0;
 				end
 			11:
 				begin

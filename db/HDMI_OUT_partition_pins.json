@@ -8,14 +8,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "HDMI_TX_HS",
-					"strict" : false
-				},
-				{
-					"name" : "HDMI_TX_VS",
-					"strict" : false
-				},
-				{
 					"name" : "sda_test",
 					"strict" : false
 				},

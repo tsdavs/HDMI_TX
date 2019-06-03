@@ -1,12 +1,12 @@
-Fitter Status : Successful - Thu May 30 19:25:55 2019
+Fitter Status : Successful - Mon Jun 03 21:20:56 2019
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : HDMI_OUT
 Top-level Entity Name : HDMI_OUT
 Family : Cyclone V
 Device : 5CSEBA6U23I7DK
 Timing Models : Final
-Logic utilization (in ALMs) : 50 / 41,910 ( < 1 % )
-Total registers : 68
+Logic utilization (in ALMs) : 52 / 41,910 ( < 1 % )
+Total registers : 103
 Total pins : 36 / 314 ( 11 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 5,662,720 ( 0 % )
