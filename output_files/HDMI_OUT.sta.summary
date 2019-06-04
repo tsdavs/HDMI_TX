@@ -3,147 +3,259 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1100mV 100C Model Setup 'I2C_config:i2c_config|counter:counter_100khz|TC_out'
-Slack : -3.336
-TNS   : -158.086
+Slack : -8.648
+TNS   : -250.645
+
+Type  : Slow 1100mV 100C Model Setup 'clock_25|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
+Slack : -8.484
+TNS   : -121.786
 
 Type  : Slow 1100mV 100C Model Setup '_clock_50'
-Slack : -2.720
-TNS   : -2.720
-
-Type  : Slow 1100mV 100C Model Setup '_clock_25'
-Slack : -2.417
-TNS   : -59.105
-
-Type  : Slow 1100mV 100C Model Hold '_clock_25'
-Slack : 0.440
+Slack : 15.296
 TNS   : 0.000
 
-Type  : Slow 1100mV 100C Model Hold 'I2C_config:i2c_config|counter:counter_100khz|TC_out'
-Slack : 0.525
+Type  : Slow 1100mV 100C Model Setup 'i_output|u_pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
+Slack : 35.781
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Hold 'i_output|u_pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
+Slack : 0.313
 TNS   : 0.000
 
 Type  : Slow 1100mV 100C Model Hold '_clock_50'
-Slack : 0.901
+Slack : 0.325
 TNS   : 0.000
 
-Type  : Slow 1100mV 100C Model Minimum Pulse Width '_clock_50'
-Slack : -0.643
-TNS   : -1.181
+Type  : Slow 1100mV 100C Model Hold 'clock_25|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
+Slack : 0.443
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Hold 'I2C_config:i2c_config|counter:counter_100khz|TC_out'
+Slack : 0.679
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Recovery '_clock_50'
+Slack : 18.230
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Removal '_clock_50'
+Slack : 0.943
+TNS   : 0.000
 
 Type  : Slow 1100mV 100C Model Minimum Pulse Width 'I2C_config:i2c_config|counter:counter_100khz|TC_out'
 Slack : -0.538
-TNS   : -59.836
+TNS   : -57.645
 
-Type  : Slow 1100mV 100C Model Minimum Pulse Width '_clock_25'
-Slack : -0.538
-TNS   : -23.087
-
-Type  : Slow 1100mV -40C Model Setup 'I2C_config:i2c_config|counter:counter_100khz|TC_out'
-Slack : -3.476
-TNS   : -157.387
-
-Type  : Slow 1100mV -40C Model Setup '_clock_50'
-Slack : -2.460
-TNS   : -2.460
-
-Type  : Slow 1100mV -40C Model Setup '_clock_25'
-Slack : -2.406
-TNS   : -59.154
-
-Type  : Slow 1100mV -40C Model Hold '_clock_25'
-Slack : 0.413
+Type  : Slow 1100mV 100C Model Minimum Pulse Width 'clock_25|pll_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]'
+Slack : 0.325
 TNS   : 0.000
 
-Type  : Slow 1100mV -40C Model Hold 'I2C_config:i2c_config|counter:counter_100khz|TC_out'
-Slack : 0.494
+Type  : Slow 1100mV 100C Model Minimum Pulse Width 'i_output|u_pll|pll_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]'
+Slack : 0.325
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Minimum Pulse Width '_clock_50'
+Slack : 9.178
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Minimum Pulse Width 'i_output|u_pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
+Slack : 19.115
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Minimum Pulse Width 'clock_25|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
+Slack : 19.123
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Setup 'I2C_config:i2c_config|counter:counter_100khz|TC_out'
+Slack : -8.797
+TNS   : -251.420
+
+Type  : Slow 1100mV -40C Model Setup 'clock_25|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
+Slack : -7.461
+TNS   : -105.434
+
+Type  : Slow 1100mV -40C Model Setup '_clock_50'
+Slack : 15.414
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Setup 'i_output|u_pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
+Slack : 35.771
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Hold 'clock_25|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
+Slack : 0.078
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Hold 'i_output|u_pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
+Slack : 0.310
 TNS   : 0.000
 
 Type  : Slow 1100mV -40C Model Hold '_clock_50'
-Slack : 0.748
+Slack : 0.312
 TNS   : 0.000
 
-Type  : Slow 1100mV -40C Model Minimum Pulse Width '_clock_50'
-Slack : -0.635
-TNS   : -1.173
+Type  : Slow 1100mV -40C Model Hold 'I2C_config:i2c_config|counter:counter_100khz|TC_out'
+Slack : 0.689
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Recovery '_clock_50'
+Slack : 18.327
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Removal '_clock_50'
+Slack : 0.882
+TNS   : 0.000
 
 Type  : Slow 1100mV -40C Model Minimum Pulse Width 'I2C_config:i2c_config|counter:counter_100khz|TC_out'
 Slack : -0.538
-TNS   : -57.712
+TNS   : -56.594
 
-Type  : Slow 1100mV -40C Model Minimum Pulse Width '_clock_25'
-Slack : -0.538
-TNS   : -22.789
+Type  : Slow 1100mV -40C Model Minimum Pulse Width 'clock_25|pll_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]'
+Slack : 0.325
+TNS   : 0.000
 
-Type  : Fast 1100mV 100C Model Setup '_clock_50'
-Slack : -2.201
-TNS   : -2.201
+Type  : Slow 1100mV -40C Model Minimum Pulse Width 'i_output|u_pll|pll_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]'
+Slack : 0.325
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Minimum Pulse Width '_clock_50'
+Slack : 9.299
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Minimum Pulse Width 'clock_25|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
+Slack : 19.030
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Minimum Pulse Width 'i_output|u_pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
+Slack : 19.041
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Setup 'clock_25|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
+Slack : -6.397
+TNS   : -93.784
 
 Type  : Fast 1100mV 100C Model Setup 'I2C_config:i2c_config|counter:counter_100khz|TC_out'
-Slack : -1.602
-TNS   : -60.528
+Slack : -4.300
+TNS   : -107.215
 
-Type  : Fast 1100mV 100C Model Setup '_clock_25'
-Slack : -0.839
-TNS   : -22.859
+Type  : Fast 1100mV 100C Model Setup '_clock_50'
+Slack : 16.523
+TNS   : 0.000
 
-Type  : Fast 1100mV 100C Model Hold '_clock_25'
-Slack : -0.096
-TNS   : -0.584
+Type  : Fast 1100mV 100C Model Setup 'i_output|u_pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
+Slack : 37.695
+TNS   : 0.000
 
-Type  : Fast 1100mV 100C Model Hold 'I2C_config:i2c_config|counter:counter_100khz|TC_out'
-Slack : -0.054
-TNS   : -0.054
+Type  : Fast 1100mV 100C Model Hold 'i_output|u_pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
+Slack : 0.166
+TNS   : 0.000
 
 Type  : Fast 1100mV 100C Model Hold '_clock_50'
-Slack : 1.124
+Slack : 0.169
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Hold 'clock_25|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
+Slack : 0.206
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Hold 'I2C_config:i2c_config|counter:counter_100khz|TC_out'
+Slack : 0.261
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Recovery '_clock_50'
+Slack : 19.080
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Removal '_clock_50'
+Slack : 0.457
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Minimum Pulse Width 'I2C_config:i2c_config|counter:counter_100khz|TC_out'
+Slack : -0.065
+TNS   : -0.642
+
+Type  : Fast 1100mV 100C Model Minimum Pulse Width 'clock_25|pll_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]'
+Slack : 0.325
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Minimum Pulse Width 'i_output|u_pll|pll_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]'
+Slack : 0.325
 TNS   : 0.000
 
 Type  : Fast 1100mV 100C Model Minimum Pulse Width '_clock_50'
-Slack : -0.653
-TNS   : -1.103
-
-Type  : Fast 1100mV 100C Model Minimum Pulse Width 'I2C_config:i2c_config|counter:counter_100khz|TC_out'
-Slack : 0.002
+Slack : 9.107
 TNS   : 0.000
 
-Type  : Fast 1100mV 100C Model Minimum Pulse Width '_clock_25'
-Slack : 0.069
+Type  : Fast 1100mV 100C Model Minimum Pulse Width 'clock_25|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
+Slack : 19.411
 TNS   : 0.000
 
-Type  : Fast 1100mV -40C Model Setup '_clock_50'
-Slack : -1.696
-TNS   : -1.696
+Type  : Fast 1100mV 100C Model Minimum Pulse Width 'i_output|u_pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
+Slack : 19.411
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Setup 'clock_25|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
+Slack : -4.725
+TNS   : -69.147
 
 Type  : Fast 1100mV -40C Model Setup 'I2C_config:i2c_config|counter:counter_100khz|TC_out'
-Slack : -1.275
-TNS   : -46.908
+Slack : -4.127
+TNS   : -94.206
 
-Type  : Fast 1100mV -40C Model Setup '_clock_25'
-Slack : -0.684
-TNS   : -17.576
+Type  : Fast 1100mV -40C Model Setup '_clock_50'
+Slack : 16.588
+TNS   : 0.000
 
-Type  : Fast 1100mV -40C Model Hold '_clock_25'
-Slack : -0.131
-TNS   : -1.512
-
-Type  : Fast 1100mV -40C Model Hold 'I2C_config:i2c_config|counter:counter_100khz|TC_out'
-Slack : -0.107
-TNS   : -0.217
+Type  : Fast 1100mV -40C Model Setup 'i_output|u_pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
+Slack : 37.912
+TNS   : 0.000
 
 Type  : Fast 1100mV -40C Model Hold '_clock_50'
-Slack : 0.715
+Slack : 0.147
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Hold 'i_output|u_pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
+Slack : 0.148
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Hold 'clock_25|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
+Slack : 0.190
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Hold 'I2C_config:i2c_config|counter:counter_100khz|TC_out'
+Slack : 0.202
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Recovery '_clock_50'
+Slack : 19.203
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Removal '_clock_50'
+Slack : 0.390
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'I2C_config:i2c_config|counter:counter_100khz|TC_out'
+Slack : 0.009
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'clock_25|pll_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]'
+Slack : 0.325
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'i_output|u_pll|pll_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]'
+Slack : 0.325
 TNS   : 0.000
 
 Type  : Fast 1100mV -40C Model Minimum Pulse Width '_clock_50'
-Slack : -0.698
-TNS   : -1.280
-
-Type  : Fast 1100mV -40C Model Minimum Pulse Width 'I2C_config:i2c_config|counter:counter_100khz|TC_out'
-Slack : 0.063
+Slack : 9.049
 TNS   : 0.000
 
-Type  : Fast 1100mV -40C Model Minimum Pulse Width '_clock_25'
-Slack : 0.107
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'i_output|u_pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
+Slack : 19.402
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'clock_25|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk'
+Slack : 19.403
 TNS   : 0.000
 
 ------------------------------------------------------------

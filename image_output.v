@@ -1,17 +1,17 @@
 module image_output (
-	input clock_25,
+	input clock_50,
 	
 	output pixel_clock,
-	output reg data_enable,
+	output data_enable,
 	output horz_sync,
 	output vert_sync,
-	output reg [7:0] red,
-	output reg [7:0] green,
-	output reg [7:0] blue
+	output [7:0] red,
+	output [7:0] green,
+	output [7:0] blue
 );
 
 //640x480p60
-wire [11:0] _v_back_porch = 12'd32; //33-1
+wire [11:0] _v_back_porch = 12'd33; //34-1
 wire [11:0] _v_front_porch = 12'd9; //10-1
 wire [11:0] _v_sync_length = 12'd1; //2-1
 wire [11:0] _v_active_pixels = 12'd479; //478-1
@@ -23,72 +23,77 @@ wire [11:0] _h_sync_length = 12'd95; //96-1
 wire [11:0] _h_active_pixels = 12'd639; //640-1
 wire [11:0] _h_total_pixels = 12'd799; //800-1
 
-wire _draw_flag ;
-//wire _data_enable;
-//wire [7:0] _red;
-//wire [7:0] _green;
-//wire [7:0] _blue;
+wire [63:0] reconfig_to_pll, reconfig_from_pll;
+wire gen_clk_locked;
+wire [31:0] mgmt_readdata, mgmt_writedata;
+wire mgmt_read, mgmt_write;
+wire [5:0] mgmt_address;
 
 vertical_draw v_draw (
 	.pixel_clock(pixel_clock),
-	
+	.reset_n(gen_clk_locked),
 	.v_back_porch(_v_back_porch),
-	.v_front_porch(_v_front_porch),
 	.v_sync_length(_v_sync_length),
-	.v_active_pixels(_v_active_pixels),
 	.v_total_pixels(_v_total_pixels),
-	
-	.h_back_porch(_h_back_porch),
-	.h_front_porch(_h_front_porch),
+	.v_start(_v_back_porch + _v_sync_length),           
+	.v_end(_v_back_porch + _v_sync_length + _v_active_pixels + 1), 
+
 	.h_sync_length(_h_sync_length),
-	.h_active_pixels(_h_active_pixels),
 	.h_total_pixels(_h_total_pixels),
+	.h_start(_h_back_porch + _h_sync_length - 1),             
+	.h_end(_h_back_porch + _h_sync_length + _h_active_pixels),  
 	
 	.h_sync(horz_sync),
 	.v_sync(vert_sync),
-	.draw_flag(_draw_flag)
+	.data_enable(data_enable),
+	.vga_r(red), 
+	.vga_g(green), 
+	.vga_b(blue)
 );
 
-/*image_generator i_generator (
-	.pixel_clock(pixel_clock),
-	.draw_flag(_draw_flag),
+pll_reconfig u_pll_reconfig (
+	.mgmt_clk(clock_50),
+	.mgmt_reset(),
+	.mgmt_readdata(mgmt_readdata),
+	.mgmt_waitrequest(),
+	.mgmt_read(mgmt_read),
+	.mgmt_write(mgmt_write),
+	.mgmt_address(mgmt_address),
+	.mgmt_writedata(mgmt_writedata),
+	.reconfig_to_pll(reconfig_to_pll),
+	.reconfig_from_pll(reconfig_from_pll) 
+);
+
+pll u_pll (
+	.refclk(clock_50),           
+	.rst(),              
+	.outclk_0(pixel_clock), 
+	.locked(gen_clk_locked),           
+	.reconfig_to_pll(reconfig_to_pll),  
+	.reconfig_from_pll(reconfig_from_pll) 
+);
+
+pll_controller u_pll_controller (
+	.clk(clock_50),
+	.reset_n(),
+	.mgmt_readdata(mgmt_readdata),
+	.mgmt_read(mgmt_read),
+	.mgmt_write(mgmt_write),
+	.mgmt_address(mgmt_address),
+	.mgmt_writedata(mgmt_writedata) 
+);
 	
-	.data_enable(_data_enable),
-	.red(_red),
-	.green(_green),
-	.blue(_blue)
-);*/
-reg [9:0] vert_line = 0;
-reg [9:0] horz_line = 0;
-
-always @(posedge horz_sync)
-	begin
-		horz_line = horz_line + 1;
-	end
+//							  Reference - modified from 
+// --------------------------------------------------------------------
+//           
+//                     Terasic Technologies Inc
+//                     356 Fu-Shin E. Rd Sec. 1. JhuBei City,
+//                     HsinChu County, Taiwan
+//                     302
+//
+//                     web: http://www.terasic.com/
+//                     email: support@terasic.com
+//
+// --------------------------------------------------------------------
 	
-always @(posedge vert_sync)
-	begin
-		vert_line = vert_line + 1;
-	end
-
-always @(posedge pixel_clock) //pixel clock
-	begin
-		data_enable <= 1'b1;
-		
-		if(_draw_flag == 1'b1)
-			begin
-				{red, green, blue} <= {8'hFF, 8'hFF, 8'hFF};
-			end
-		else 
-			begin
-				{red, green, blue} <= {8'h00, 8'h00, 8'h00};
-			end
-	end
-
-
-assign _data_enable = data_enable;
-//assign _red = red;
-//assign _green = green;
-//assign _blue = blue;
-
 endmodule

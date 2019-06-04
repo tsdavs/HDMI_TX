@@ -1,6 +1,6 @@
 //Design parameterised-bit optimised counter
 
-module counter #(parameter width = 8)
+module counter #(parameter width = 11)
 (
 	input MR_n, //master reset
 	input CEP,
@@ -31,7 +31,8 @@ always @(posedge(clock))
 			end
 		else if(CEP == 1'b1)
 			begin
-				if(counterValue ==  8'b11111010)
+			//10011100010
+				if(counterValue ==  11'b10011100010) //8'b11111010
 					begin
 						//sets wrap around for overflow
 						TC_out = 1;

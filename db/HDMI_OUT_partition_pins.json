@@ -4,19 +4,15 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "I2C_SCL",
+					"name" : "HDMI_TX_HS",
 					"strict" : false
 				},
 				{
-					"name" : "sda_test",
+					"name" : "HDMI_TX_VS",
 					"strict" : false
 				},
 				{
-					"name" : "scl_test",
-					"strict" : false
-				},
-				{
-					"name" : "reset",
+					"name" : "HDMI_TX_DE",
 					"strict" : false
 				},
 				{
@@ -24,7 +20,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "key1",
+					"name" : "I2C_SCL",
 					"strict" : false
 				},
 				{

@@ -6,39 +6,47 @@ module HDMI_OUT(
 
 	inout I2C_SDA, //I2C data
 	
-	output I2C_SCL, //I2C Clock
+	inout I2C_SCL, //I2C Clock
 	output [23:0] HDMI_TX_D, //Video data bus RGB 
 	output HDMI_TX_CLK, //Video Clock
 	output HDMI_TX_HS, //Horizontal sync
 	output HDMI_TX_VS, //Vertical sync
-	output HDMI_TX_DE, //Data enable signal for digital video
+	output HDMI_TX_DE//, //Data enable signal for digital video
 	
-	output sda_test,
-	output scl_test,
-	output reset
+	//GPIO pins for testing
+	/*output sda_test, //ac24
+	output scl_test, //y15
+	output reset, 
+	output data_enable_test, //ag28
+	output hdmi_clock, //ad26
+	output hdmi_data_test, //aa15
+	output vs_test, //ae25
+	output hs_test //af28*/
+
 );
 
+//Assign to GPIO pins for testing
+/*assign vs_test = HDMI_TX_VS;
+assign hs_test = HDMI_TX_HS;
+assign data_enable_test = HDMI_TX_DE;
+assign hdmi_clock = HDMI_TX_CLK;
+assign hdmi_data_test = HDMI_TX_D[1];
 assign sda_test = I2C_SDA;
 assign scl_test = I2C_SCL;
-assign reset = key1;
+assign reset = key1;*/
 
-reg _clock_25 = 0;
+reg _clock_25;
 
-always @(posedge(_clock_50))
-	begin
-		if(_clock_25 == 0)
-			begin
-				_clock_25 = 1;
-			end
-		else
-			begin
-				_clock_25 = 0;
-			end
-	end
-
+pll clock_25(
+	.refclk   (_clock_50),  
+	.rst      (),     
+	.outclk_0 (_clock_25), 
+	.locked   ()   
+);
+	
 image_output i_output (
 	//inputs
-	.clock_25(_clock_25),
+	.clock_50(_clock_50),
 
 	//outputs
 	.pixel_clock(HDMI_TX_CLK),
