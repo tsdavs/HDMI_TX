@@ -1,6 +1,6 @@
 module I2C_config(
 	input reset,
-	input clock_25,
+	input clock_50,
 	input interrupt,
 	
 	inout i2c_serial_data,
@@ -18,11 +18,8 @@ reg _start = 0;
 wire clock_100khz;
 
 counter counter_100khz(
-	.MR_n(1'b1),
-	.CEP(1'b1),
-	.PE_n(1'b1),
 	.Dn(),
-	.clock(clock_25),
+	.clock(clock_50),
 	
 	.Qn_out(),
 	.TC_out(clock_100khz)
@@ -99,7 +96,7 @@ always @ (posedge(clock_100khz))
 		//end//reset - remove this later
 	end
 	
-always @(posedge(clock_25))
+always @(posedge(clock_100khz))
 	begin
 		case(lookup_table_index)
 			0: lookup_table_data <= 16'h4100; //Set N Value (6144)

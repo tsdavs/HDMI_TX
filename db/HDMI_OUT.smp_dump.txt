@@ -26,78 +26,7 @@ currentState.1001 0 0 1 0 0 0 0 0 0 0 0 1
 currentState.1010 0 1 0 0 0 0 0 0 0 0 0 1 
 currentState.1011 1 0 0 0 0 0 0 0 0 0 0 1 
 
-State Machine - |HDMI_OUT|image_output:i_output|pll_controller:u_pll_controller|state
-Name state.0111 state.0110 state.0101 state.0100 state.0011 state.0010 state.0001 state.0000 state.1000 
-state.0000 0 0 0 0 0 0 0 0 0 
-state.0001 0 0 0 0 0 0 1 1 0 
-state.0010 0 0 0 0 0 1 0 1 0 
-state.0011 0 0 0 0 1 0 0 1 0 
-state.0100 0 0 0 1 0 0 0 1 0 
-state.0101 0 0 1 0 0 0 0 1 0 
-state.0110 0 1 0 0 0 0 0 1 0 
-state.0111 1 0 0 0 0 0 0 1 0 
-state.1000 0 0 0 0 0 0 0 1 1 
-
-State Machine - |HDMI_OUT|image_output:i_output|pll:u_pll|pll_0002:pll_inst|altera_pll:altera_pll_i|dps_extra_kick:dps_extra_inst|dps_current_state
-Name dps_current_state.PHASE_DONE_LOW_0 dps_current_state.PHASE_DONE_LOW_4 dps_current_state.PHASE_DONE_LOW_3 dps_current_state.PHASE_DONE_LOW_2 dps_current_state.PHASE_DONE_LOW_1 dps_current_state.PHASE_DONE_HIGH 
-dps_current_state.PHASE_DONE_HIGH 0 0 0 0 0 0 
-dps_current_state.PHASE_DONE_LOW_1 0 0 0 0 1 1 
-dps_current_state.PHASE_DONE_LOW_2 0 0 0 1 0 1 
-dps_current_state.PHASE_DONE_LOW_3 0 0 1 0 0 1 
-dps_current_state.PHASE_DONE_LOW_4 0 1 0 0 0 1 
-dps_current_state.PHASE_DONE_LOW_0 1 0 0 0 0 1 
-
-State Machine - |HDMI_OUT|image_output:i_output|pll_reconfig:u_pll_reconfig|altera_pll_reconfig_top:pll_reconfig_inst|altera_pll_reconfig_core:NM28_reconfig.reconfig_core.altera_pll_reconfig_core_inst0|current_read_state
-Name current_read_state.READ_POST_WAIT current_read_state.READ current_read_state.READ_WAIT current_read_state.READ_IDLE 
-current_read_state.READ_IDLE 0 0 0 0 
-current_read_state.READ_WAIT 0 0 1 1 
-current_read_state.READ 0 1 0 1 
-current_read_state.READ_POST_WAIT 1 0 0 1 
-
-State Machine - |HDMI_OUT|image_output:i_output|pll_reconfig:u_pll_reconfig|altera_pll_reconfig_top:pll_reconfig_inst|altera_pll_reconfig_core:NM28_reconfig.reconfig_core.altera_pll_reconfig_core_inst0|operation_address
-Name operation_address.CP_CURRENT_REG operation_address.BWCTRL_REG operation_address.DSM_REG operation_address.DPS_REG operation_address.C_COUNTERS_REG operation_address.M_REG operation_address.N_REG operation_address.000000 operation_address.ANY_DPRIO operation_address.VCO_REG 
-operation_address.000000 0 0 0 0 0 0 0 0 0 0 
-operation_address.N_REG 0 0 0 0 0 0 1 1 0 0 
-operation_address.M_REG 0 0 0 0 0 1 0 1 0 0 
-operation_address.C_COUNTERS_REG 0 0 0 0 1 0 0 1 0 0 
-operation_address.DPS_REG 0 0 0 1 0 0 0 1 0 0 
-operation_address.DSM_REG 0 0 1 0 0 0 0 1 0 0 
-operation_address.BWCTRL_REG 0 1 0 0 0 0 0 1 0 0 
-operation_address.CP_CURRENT_REG 1 0 0 0 0 0 0 1 0 0 
-operation_address.VCO_REG 0 0 0 0 0 0 0 1 0 1 
-operation_address.ANY_DPRIO 0 0 0 0 0 0 0 1 1 0 
-
-State Machine - |HDMI_OUT|image_output:i_output|pll_reconfig:u_pll_reconfig|altera_pll_reconfig_top:pll_reconfig_inst|altera_pll_reconfig_core:NM28_reconfig.reconfig_core.altera_pll_reconfig_core_inst0|current_state
-Name current_state.IDLE current_state.LOCKED current_state.WAIT_ON_LOCK 
-current_state.IDLE 0 0 0 
-current_state.WAIT_ON_LOCK 1 0 1 
-current_state.LOCKED 1 1 0 
-
-State Machine - |HDMI_OUT|image_output:i_output|pll_reconfig:u_pll_reconfig|altera_pll_reconfig_top:pll_reconfig_inst|altera_pll_reconfig_core:NM28_reconfig.reconfig_core.altera_pll_reconfig_core_inst0|dprio_cur_state
-Name dprio_cur_state.DPRIO_DONE dprio_cur_state.TEN dprio_cur_state.NINE dprio_cur_state.EIGHT dprio_cur_state.SEVEN dprio_cur_state.SIX dprio_cur_state.FIVE dprio_cur_state.FOUR dprio_cur_state.THREE dprio_cur_state.TWO dprio_cur_state.ONE dprio_cur_state.DPRIO_IDLE 
-dprio_cur_state.DPRIO_IDLE 0 0 0 0 0 0 0 0 0 0 0 0 
-dprio_cur_state.ONE 0 0 0 0 0 0 0 0 0 0 1 1 
-dprio_cur_state.TWO 0 0 0 0 0 0 0 0 0 1 0 1 
-dprio_cur_state.THREE 0 0 0 0 0 0 0 0 1 0 0 1 
-dprio_cur_state.FOUR 0 0 0 0 0 0 0 1 0 0 0 1 
-dprio_cur_state.FIVE 0 0 0 0 0 0 1 0 0 0 0 1 
-dprio_cur_state.SIX 0 0 0 0 0 1 0 0 0 0 0 1 
-dprio_cur_state.SEVEN 0 0 0 0 1 0 0 0 0 0 0 1 
-dprio_cur_state.EIGHT 0 0 0 1 0 0 0 0 0 0 0 1 
-dprio_cur_state.NINE 0 0 1 0 0 0 0 0 0 0 0 1 
-dprio_cur_state.TEN 0 1 0 0 0 0 0 0 0 0 0 1 
-dprio_cur_state.DPRIO_DONE 1 0 0 0 0 0 0 0 0 0 0 1 
-
-State Machine - |HDMI_OUT|image_output:i_output|pll_reconfig:u_pll_reconfig|altera_pll_reconfig_top:pll_reconfig_inst|altera_pll_reconfig_core:NM28_reconfig.reconfig_core.altera_pll_reconfig_core_inst0|dyn_phase_shift:dyn_phase_shift_inst|dps_current_state
-Name dps_current_state.DPS_CHANGED dps_current_state.DPS_WAIT_DPRIO_WRITING dps_current_state.DPS_WAIT_PHASE_EN dps_current_state.DPS_START dps_current_state.DPS_WAIT_PHASE_DONE dps_current_state.DPS_DONE 
-dps_current_state.DPS_DONE 0 0 0 0 0 0 
-dps_current_state.DPS_WAIT_PHASE_DONE 0 0 0 0 1 1 
-dps_current_state.DPS_START 0 0 0 1 0 1 
-dps_current_state.DPS_WAIT_PHASE_EN 0 0 1 0 0 1 
-dps_current_state.DPS_WAIT_DPRIO_WRITING 0 1 0 0 0 1 
-dps_current_state.DPS_CHANGED 1 0 0 0 0 1 
-
-State Machine - |HDMI_OUT|pll:clock_25|pll_0002:pll_inst|altera_pll:altera_pll_i|dps_extra_kick:dps_extra_inst|dps_current_state
+State Machine - |HDMI_OUT|image_output:i_output|pll:clock_25|pll_0002:pll_inst|altera_pll:altera_pll_i|dps_extra_kick:dps_extra_inst|dps_current_state
 Name dps_current_state.PHASE_DONE_LOW_0 dps_current_state.PHASE_DONE_LOW_4 dps_current_state.PHASE_DONE_LOW_3 dps_current_state.PHASE_DONE_LOW_2 dps_current_state.PHASE_DONE_LOW_1 dps_current_state.PHASE_DONE_HIGH 
 dps_current_state.PHASE_DONE_HIGH 0 0 0 0 0 0 
 dps_current_state.PHASE_DONE_LOW_1 0 0 0 0 1 1 

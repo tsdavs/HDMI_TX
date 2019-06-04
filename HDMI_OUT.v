@@ -34,15 +34,6 @@ assign hdmi_data_test = HDMI_TX_D[1];
 assign sda_test = I2C_SDA;
 assign scl_test = I2C_SCL;
 assign reset = key1;*/
-
-reg _clock_25;
-
-pll clock_25(
-	.refclk   (_clock_50),  
-	.rst      (),     
-	.outclk_0 (_clock_25), 
-	.locked   ()   
-);
 	
 image_output i_output (
 	//inputs
@@ -61,7 +52,7 @@ image_output i_output (
 I2C_config i2c_config(
 	//inputs
 	.reset(reset),
-	.clock_25(_clock_25),
+	.clock_50(_clock_50),
 	.interrupt(HDMI_TX_INT),
 	
 	//inouts

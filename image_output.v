@@ -23,15 +23,9 @@ wire [11:0] _h_sync_length = 12'd95; //96-1
 wire [11:0] _h_active_pixels = 12'd639; //640-1
 wire [11:0] _h_total_pixels = 12'd799; //800-1
 
-wire [63:0] reconfig_to_pll, reconfig_from_pll;
-wire gen_clk_locked;
-wire [31:0] mgmt_readdata, mgmt_writedata;
-wire mgmt_read, mgmt_write;
-wire [5:0] mgmt_address;
-
 vertical_draw v_draw (
 	.pixel_clock(pixel_clock),
-	.reset_n(gen_clk_locked),
+	.reset_n(1'b1),
 	.v_back_porch(_v_back_porch),
 	.v_sync_length(_v_sync_length),
 	.v_total_pixels(_v_total_pixels),
@@ -51,49 +45,11 @@ vertical_draw v_draw (
 	.vga_b(blue)
 );
 
-pll_reconfig u_pll_reconfig (
-	.mgmt_clk(clock_50),
-	.mgmt_reset(),
-	.mgmt_readdata(mgmt_readdata),
-	.mgmt_waitrequest(),
-	.mgmt_read(mgmt_read),
-	.mgmt_write(mgmt_write),
-	.mgmt_address(mgmt_address),
-	.mgmt_writedata(mgmt_writedata),
-	.reconfig_to_pll(reconfig_to_pll),
-	.reconfig_from_pll(reconfig_from_pll) 
+pll clock_25(
+	.refclk   (clock_50),  
+	.rst      (),     
+	.outclk_0 (pixel_clock), 
+	.locked   ()   
 );
-
-pll u_pll (
-	.refclk(clock_50),           
-	.rst(),              
-	.outclk_0(pixel_clock), 
-	.locked(gen_clk_locked),           
-	.reconfig_to_pll(reconfig_to_pll),  
-	.reconfig_from_pll(reconfig_from_pll) 
-);
-
-pll_controller u_pll_controller (
-	.clk(clock_50),
-	.reset_n(),
-	.mgmt_readdata(mgmt_readdata),
-	.mgmt_read(mgmt_read),
-	.mgmt_write(mgmt_write),
-	.mgmt_address(mgmt_address),
-	.mgmt_writedata(mgmt_writedata) 
-);
-	
-//							  Reference - modified from 
-// --------------------------------------------------------------------
-//           
-//                     Terasic Technologies Inc
-//                     356 Fu-Shin E. Rd Sec. 1. JhuBei City,
-//                     HsinChu County, Taiwan
-//                     302
-//
-//                     web: http://www.terasic.com/
-//                     email: support@terasic.com
-//
-// --------------------------------------------------------------------
 	
 endmodule
