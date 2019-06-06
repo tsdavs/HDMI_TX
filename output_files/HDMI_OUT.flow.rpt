@@ -1,5 +1,5 @@
 Flow report for HDMI_OUT
-Wed Jun 05 04:13:43 2019
+Wed Jun 05 22:15:55 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,25 +40,25 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Wed Jun 05 04:13:35 2019       ;
+; Flow Status                     ; Successful - Wed Jun 05 22:15:55 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; HDMI_OUT                                    ;
 ; Top-level Entity Name           ; HDMI_OUT                                    ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEBA6U23I7DK                              ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 69 / 41,910 ( < 1 % )                       ;
-; Total registers                 ; 121                                         ;
-; Total pins                      ; 33 / 314 ( 11 % )                           ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 109                                         ;
+; Total pins                      ; 41                                          ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0 / 5,662,720 ( 0 % )                       ;
-; Total DSP Blocks                ; 0 / 112 ( 0 % )                             ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
 ; Total HSSI TX PCSs              ; 0                                           ;
 ; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 1 / 6 ( 17 % )                              ;
-; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
+; Total PLLs                      ; 1                                           ;
+; Total DLLs                      ; 0                                           ;
 +---------------------------------+---------------------------------------------+
 
 
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/05/2019 04:12:40 ;
+; Start date & time ; 06/05/2019 22:15:44 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; HDMI_OUT            ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 238368710683239.155967196013520        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 238368710683239.155973694309792        ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 100                                    ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; -40                                    ; --            ; --          ; --         ;
 ; MISC_FILE                           ; pll/pll.cmp                            ; --            ; --          ; --         ;
@@ -99,11 +99,8 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:11     ; 1.0                     ; 4854 MB             ; 00:00:22                           ;
-; Fitter               ; 00:00:36     ; 1.0                     ; 6615 MB             ; 00:01:04                           ;
-; Assembler            ; 00:00:06     ; 1.0                     ; 4851 MB             ; 00:00:06                           ;
-; Timing Analyzer      ; 00:00:07     ; 1.1                     ; 5234 MB             ; 00:00:07                           ;
-; Total                ; 00:01:00     ; --                      ; --                  ; 00:01:39                           ;
+; Analysis & Synthesis ; 00:00:11     ; 1.0                     ; 4852 MB             ; 00:00:24                           ;
+; Total                ; 00:00:11     ; --                      ; --                  ; 00:00:24                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -113,9 +110,6 @@ refer to the applicable agreement for further details.
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
 ; Analysis & Synthesis ; DESKTOP-H0KF2NN  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; DESKTOP-H0KF2NN  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; DESKTOP-H0KF2NN  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; DESKTOP-H0KF2NN  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -123,9 +117,6 @@ refer to the applicable agreement for further details.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off HDMI_OUT -c HDMI_OUT
-quartus_fit --read_settings_files=off --write_settings_files=off HDMI_OUT -c HDMI_OUT
-quartus_asm --read_settings_files=off --write_settings_files=off HDMI_OUT -c HDMI_OUT
-quartus_sta HDMI_OUT -c HDMI_OUT
 
 
 

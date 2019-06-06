@@ -12,19 +12,18 @@ bytes.00000001 1 0 1
 bytes.byte_num 1 1 0 
 
 State Machine - |HDMI_OUT|I2C_config:i2c_config|I2C_controller:I2C_cont|currentState
-Name currentState.1011 currentState.1010 currentState.1001 currentState.1000 currentState.0111 currentState.0110 currentState.0101 currentState.0100 currentState.0011 currentState.0010 currentState.0001 currentState.0000 
-currentState.0000 0 0 0 0 0 0 0 0 0 0 0 0 
-currentState.0001 0 0 0 0 0 0 0 0 0 0 1 1 
-currentState.0010 0 0 0 0 0 0 0 0 0 1 0 1 
-currentState.0011 0 0 0 0 0 0 0 0 1 0 0 1 
-currentState.0100 0 0 0 0 0 0 0 1 0 0 0 1 
-currentState.0101 0 0 0 0 0 0 1 0 0 0 0 1 
-currentState.0110 0 0 0 0 0 1 0 0 0 0 0 1 
-currentState.0111 0 0 0 0 1 0 0 0 0 0 0 1 
-currentState.1000 0 0 0 1 0 0 0 0 0 0 0 1 
-currentState.1001 0 0 1 0 0 0 0 0 0 0 0 1 
-currentState.1010 0 1 0 0 0 0 0 0 0 0 0 1 
-currentState.1011 1 0 0 0 0 0 0 0 0 0 0 1 
+Name currentState.1010 currentState.1001 currentState.1000 currentState.0111 currentState.0110 currentState.0101 currentState.0100 currentState.0011 currentState.0010 currentState.0001 currentState.0000 
+currentState.0000 0 0 0 0 0 0 0 0 0 0 0 
+currentState.0001 0 0 0 0 0 0 0 0 0 1 1 
+currentState.0010 0 0 0 0 0 0 0 0 1 0 1 
+currentState.0011 0 0 0 0 0 0 0 1 0 0 1 
+currentState.0100 0 0 0 0 0 0 1 0 0 0 1 
+currentState.0101 0 0 0 0 0 1 0 0 0 0 1 
+currentState.0110 0 0 0 0 1 0 0 0 0 0 1 
+currentState.0111 0 0 0 1 0 0 0 0 0 0 1 
+currentState.1000 0 0 1 0 0 0 0 0 0 0 1 
+currentState.1001 0 1 0 0 0 0 0 0 0 0 1 
+currentState.1010 1 0 0 0 0 0 0 0 0 0 1 
 
 State Machine - |HDMI_OUT|image_output:i_output|pll:clock_25|pll_0002:pll_inst|altera_pll:altera_pll_i|dps_extra_kick:dps_extra_inst|dps_current_state
 Name dps_current_state.PHASE_DONE_LOW_0 dps_current_state.PHASE_DONE_LOW_4 dps_current_state.PHASE_DONE_LOW_3 dps_current_state.PHASE_DONE_LOW_2 dps_current_state.PHASE_DONE_LOW_1 dps_current_state.PHASE_DONE_HIGH 

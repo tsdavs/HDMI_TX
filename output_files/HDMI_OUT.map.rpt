@@ -1,5 +1,5 @@
 Analysis & Synthesis report for HDMI_OUT
-Wed Jun 05 04:12:50 2019
+Wed Jun 05 22:15:55 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -36,11 +36,10 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
  28. Port Connectivity Checks: "I2C_config:i2c_config|I2C_controller:I2C_cont"
  29. Port Connectivity Checks: "I2C_config:i2c_config|counter:counter_100khz"
  30. Port Connectivity Checks: "image_output:i_output|pll:clock_25"
- 31. Port Connectivity Checks: "image_output:i_output|vertical_draw:v_draw"
- 32. Post-Synthesis Netlist Statistics for Top Partition
- 33. Elapsed Time Per Partition
- 34. Analysis & Synthesis Messages
- 35. Analysis & Synthesis Suppressed Messages
+ 31. Post-Synthesis Netlist Statistics for Top Partition
+ 32. Elapsed Time Per Partition
+ 33. Analysis & Synthesis Messages
+ 34. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -66,14 +65,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Jun 05 04:12:50 2019       ;
+; Analysis & Synthesis Status     ; Successful - Wed Jun 05 22:15:55 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; HDMI_OUT                                    ;
 ; Top-level Entity Name           ; HDMI_OUT                                    ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
 ; Total registers                 ; 109                                         ;
-; Total pins                      ; 33                                          ;
+; Total pins                      ; 41                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -196,7 +195,6 @@ refer to the applicable agreement for further details.
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                   ; File Name with Absolute Path                                                       ; Library ;
 +----------------------------------+-----------------+-----------------------------+------------------------------------------------------------------------------------+---------+
 ; HDMI_OUT.v                       ; yes             ; User Verilog HDL File       ; C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v                           ;         ;
-; vertical_draw.v                  ; yes             ; User Verilog HDL File       ; C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/vertical_draw.v                      ;         ;
 ; image_output.v                   ; yes             ; User Verilog HDL File       ; C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v                       ;         ;
 ; I2C_config.v                     ; yes             ; User Verilog HDL File       ; C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v                         ;         ;
 ; I2C_controller.v                 ; yes             ; User Verilog HDL File       ; C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_controller.v                     ;         ;
@@ -214,18 +212,18 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------------------------------------------------+
 ; Resource                                    ; Usage                                               ;
 +---------------------------------------------+-----------------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 70                                                  ;
+; Estimate of Logic utilization (ALMs needed) ; 69                                                  ;
 ;                                             ;                                                     ;
-; Combinational ALUT usage for logic          ; 115                                                 ;
+; Combinational ALUT usage for logic          ; 114                                                 ;
 ;     -- 7 input functions                    ; 0                                                   ;
 ;     -- 6 input functions                    ; 21                                                  ;
 ;     -- 5 input functions                    ; 16                                                  ;
 ;     -- 4 input functions                    ; 23                                                  ;
-;     -- <=3 input functions                  ; 55                                                  ;
+;     -- <=3 input functions                  ; 54                                                  ;
 ;                                             ;                                                     ;
 ; Dedicated logic registers                   ; 109                                                 ;
 ;                                             ;                                                     ;
-; I/O pins                                    ; 33                                                  ;
+; I/O pins                                    ; 41                                                  ;
 ;                                             ;                                                     ;
 ; Total DSP Blocks                            ; 0                                                   ;
 ;                                             ;                                                     ;
@@ -234,7 +232,7 @@ refer to the applicable agreement for further details.
 ;                                             ;                                                     ;
 ; Maximum fan-out node                        ; I2C_config:i2c_config|counter:counter_100khz|TC_out ;
 ; Maximum fan-out                             ; 73                                                  ;
-; Total fan-out                               ; 760                                                 ;
+; Total fan-out                               ; 798                                                 ;
 ; Average fan-out                             ; 2.57                                                ;
 +---------------------------------------------+-----------------------------------------------------+
 
@@ -244,17 +242,16 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------+--------------+
 ; Compilation Hierarchy Node                          ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                     ; Entity Name              ; Library Name ;
 +-----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------+--------------+
-; |HDMI_OUT                                           ; 115 (0)             ; 109 (0)                   ; 0                 ; 0          ; 33   ; 0            ; |HDMI_OUT                                                                                                                                               ; HDMI_OUT                 ; work         ;
-;    |I2C_config:i2c_config|                          ; 80 (29)             ; 83 (39)                   ; 0                 ; 0          ; 0    ; 0            ; |HDMI_OUT|I2C_config:i2c_config                                                                                                                         ; I2C_config               ; work         ;
-;       |I2C_controller:I2C_cont|                     ; 40 (40)             ; 34 (34)                   ; 0                 ; 0          ; 0    ; 0            ; |HDMI_OUT|I2C_config:i2c_config|I2C_controller:I2C_cont                                                                                                 ; I2C_controller           ; work         ;
+; |HDMI_OUT                                           ; 114 (0)             ; 109 (0)                   ; 0                 ; 0          ; 41   ; 0            ; |HDMI_OUT                                                                                                                                               ; HDMI_OUT                 ; work         ;
+;    |I2C_config:i2c_config|                          ; 79 (29)             ; 83 (39)                   ; 0                 ; 0          ; 0    ; 0            ; |HDMI_OUT|I2C_config:i2c_config                                                                                                                         ; I2C_config               ; work         ;
+;       |I2C_controller:I2C_cont|                     ; 39 (39)             ; 34 (34)                   ; 0                 ; 0          ; 0    ; 0            ; |HDMI_OUT|I2C_config:i2c_config|I2C_controller:I2C_cont                                                                                                 ; I2C_controller           ; work         ;
 ;       |counter:counter_100khz|                      ; 11 (11)             ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |HDMI_OUT|I2C_config:i2c_config|counter:counter_100khz                                                                                                  ; counter                  ; work         ;
-;    |image_output:i_output|                          ; 35 (0)              ; 26 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |HDMI_OUT|image_output:i_output                                                                                                                         ; image_output             ; work         ;
+;    |image_output:i_output|                          ; 35 (35)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |HDMI_OUT|image_output:i_output                                                                                                                         ; image_output             ; work         ;
 ;       |pll:clock_25|                                ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HDMI_OUT|image_output:i_output|pll:clock_25                                                                                                            ; pll                      ; pll          ;
 ;          |pll_0002:pll_inst|                        ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HDMI_OUT|image_output:i_output|pll:clock_25|pll_0002:pll_inst                                                                                          ; pll_0002                 ; pll          ;
 ;             |altera_pll:altera_pll_i|               ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HDMI_OUT|image_output:i_output|pll:clock_25|pll_0002:pll_inst|altera_pll:altera_pll_i                                                                  ; altera_pll               ; work         ;
 ;                |altera_cyclonev_pll:cyclonev_pll|   ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HDMI_OUT|image_output:i_output|pll:clock_25|pll_0002:pll_inst|altera_pll:altera_pll_i|altera_cyclonev_pll:cyclonev_pll                                 ; altera_cyclonev_pll      ; work         ;
 ;                   |altera_cyclonev_pll_base:fpll_0| ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HDMI_OUT|image_output:i_output|pll:clock_25|pll_0002:pll_inst|altera_pll:altera_pll_i|altera_cyclonev_pll:cyclonev_pll|altera_cyclonev_pll_base:fpll_0 ; altera_cyclonev_pll_base ; work         ;
-;       |vertical_draw:v_draw|                        ; 35 (35)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |HDMI_OUT|image_output:i_output|vertical_draw:v_draw                                                                                                    ; vertical_draw            ; work         ;
 +-----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -293,24 +290,23 @@ Encoding Type:  One-Hot
 
 
 Encoding Type:  One-Hot
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |HDMI_OUT|I2C_config:i2c_config|I2C_controller:I2C_cont|currentState                                                                                                                                                                              ;
-+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+
-; Name              ; currentState.1011 ; currentState.1010 ; currentState.1001 ; currentState.1000 ; currentState.0111 ; currentState.0110 ; currentState.0101 ; currentState.0100 ; currentState.0011 ; currentState.0010 ; currentState.0001 ; currentState.0000 ;
-+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+
-; currentState.0000 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ;
-; currentState.0001 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 1                 ;
-; currentState.0010 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 1                 ;
-; currentState.0011 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 1                 ;
-; currentState.0100 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 1                 ;
-; currentState.0101 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ;
-; currentState.0110 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ;
-; currentState.0111 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ;
-; currentState.1000 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ;
-; currentState.1001 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ;
-; currentState.1010 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ;
-; currentState.1011 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ;
-+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |HDMI_OUT|I2C_config:i2c_config|I2C_controller:I2C_cont|currentState                                                                                                                                                          ;
++-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+
+; Name              ; currentState.1010 ; currentState.1001 ; currentState.1000 ; currentState.0111 ; currentState.0110 ; currentState.0101 ; currentState.0100 ; currentState.0011 ; currentState.0010 ; currentState.0001 ; currentState.0000 ;
++-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+
+; currentState.0000 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ;
+; currentState.0001 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 1                 ;
+; currentState.0010 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 1                 ;
+; currentState.0011 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 1                 ;
+; currentState.0100 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 1                 ;
+; currentState.0101 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ;
+; currentState.0110 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ;
+; currentState.0111 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ;
+; currentState.1000 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ;
+; currentState.1001 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ;
+; currentState.1010 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ;
++-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+
 
 
 Encoding Type:  One-Hot
@@ -334,16 +330,15 @@ Encoding Type:  One-Hot
 ; Register name                                                                                                                                 ; Reason for Removal                     ;
 +-----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
 ; I2C_config:i2c_config|lookup_table_data[3,16]                                                                                                 ; Stuck at GND due to stuck port data_in ;
-; image_output:i_output|vertical_draw:v_draw|vga_b[0]                                                                                           ; Stuck at VCC due to stuck port data_in ;
-; image_output:i_output|vertical_draw:v_draw|vga_r[0..7]                                                                                        ; Stuck at VCC due to stuck port data_in ;
-; image_output:i_output|vertical_draw:v_draw|vga_g[0..7]                                                                                        ; Stuck at VCC due to stuck port data_in ;
-; image_output:i_output|vertical_draw:v_draw|vga_b[1..7]                                                                                        ; Stuck at VCC due to stuck port data_in ;
+; image_output:i_output|blue[0]                                                                                                                 ; Stuck at GND due to stuck port data_in ;
+; image_output:i_output|red[0..7]                                                                                                               ; Stuck at VCC due to stuck port data_in ;
+; image_output:i_output|green[0..7]                                                                                                             ; Stuck at GND due to stuck port data_in ;
+; image_output:i_output|blue[1..7]                                                                                                              ; Stuck at GND due to stuck port data_in ;
 ; I2C_config:i2c_config|i2c_data[3,16,17]                                                                                                       ; Stuck at GND due to stuck port data_in ;
 ; I2C_config:i2c_config|i2c_data[18]                                                                                                            ; Stuck at VCC due to stuck port data_in ;
 ; I2C_config:i2c_config|i2c_data[19,20]                                                                                                         ; Stuck at GND due to stuck port data_in ;
 ; I2C_config:i2c_config|i2c_data[21..23]                                                                                                        ; Stuck at VCC due to stuck port data_in ;
 ; I2C_config:i2c_config|I2C_controller:I2C_cont|slave_address_write[0]                                                                          ; Stuck at GND due to stuck port data_in ;
-; I2C_config:i2c_config|I2C_controller:I2C_cont|currentState.1011                                                                               ; Lost fanout                            ;
 ; I2C_config:i2c_config|currentState~7                                                                                                          ; Lost fanout                            ;
 ; I2C_config:i2c_config|I2C_controller:I2C_cont|bytes~6                                                                                         ; Lost fanout                            ;
 ; I2C_config:i2c_config|I2C_controller:I2C_cont|bytes~7                                                                                         ; Lost fanout                            ;
@@ -351,10 +346,10 @@ Encoding Type:  One-Hot
 ; I2C_config:i2c_config|I2C_controller:I2C_cont|bytes~9                                                                                         ; Lost fanout                            ;
 ; I2C_config:i2c_config|I2C_controller:I2C_cont|bytes~10                                                                                        ; Lost fanout                            ;
 ; I2C_config:i2c_config|I2C_controller:I2C_cont|bytes~11                                                                                        ; Lost fanout                            ;
-; I2C_config:i2c_config|I2C_controller:I2C_cont|currentState~14                                                                                 ; Lost fanout                            ;
-; I2C_config:i2c_config|I2C_controller:I2C_cont|currentState~15                                                                                 ; Lost fanout                            ;
-; I2C_config:i2c_config|I2C_controller:I2C_cont|currentState~16                                                                                 ; Lost fanout                            ;
-; I2C_config:i2c_config|I2C_controller:I2C_cont|currentState~17                                                                                 ; Lost fanout                            ;
+; I2C_config:i2c_config|I2C_controller:I2C_cont|currentState~2                                                                                  ; Lost fanout                            ;
+; I2C_config:i2c_config|I2C_controller:I2C_cont|currentState~3                                                                                  ; Lost fanout                            ;
+; I2C_config:i2c_config|I2C_controller:I2C_cont|currentState~4                                                                                  ; Lost fanout                            ;
+; I2C_config:i2c_config|I2C_controller:I2C_cont|currentState~5                                                                                  ; Lost fanout                            ;
 ; image_output:i_output|pll:clock_25|pll_0002:pll_inst|altera_pll:altera_pll_i|dps_extra_kick:dps_extra_inst|dps_current_state~2                ; Lost fanout                            ;
 ; image_output:i_output|pll:clock_25|pll_0002:pll_inst|altera_pll:altera_pll_i|dps_extra_kick:dps_extra_inst|dps_current_state~3                ; Lost fanout                            ;
 ; image_output:i_output|pll:clock_25|pll_0002:pll_inst|altera_pll:altera_pll_i|dps_extra_kick:dps_extra_inst|dps_current_state~4                ; Lost fanout                            ;
@@ -366,7 +361,7 @@ Encoding Type:  One-Hot
 ; image_output:i_output|pll:clock_25|pll_0002:pll_inst|altera_pll:altera_pll_i|dps_extra_kick:dps_extra_inst|dps_current_state.PHASE_DONE_LOW_3 ; Stuck at GND due to stuck port clock   ;
 ; image_output:i_output|pll:clock_25|pll_0002:pll_inst|altera_pll:altera_pll_i|dps_extra_kick:dps_extra_inst|dps_current_state.PHASE_DONE_LOW_4 ; Stuck at GND due to stuck port clock   ;
 ; I2C_config:i2c_config|lookup_table_index[4,5]                                                                                                 ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 60                                                                                                        ;                                        ;
+; Total Number of Removed Registers = 59                                                                                                        ;                                        ;
 +-----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
 
 
@@ -394,7 +389,7 @@ Encoding Type:  One-Hot
 ; Total registers                              ; 109   ;
 ; Number of registers using Synchronous Clear  ; 37    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 26    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 46    ;
 ; Number of registers using Preset             ; 0     ;
@@ -406,8 +401,10 @@ Encoding Type:  One-Hot
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
+; image_output:i_output|horz_sync        ; 2       ;
+; image_output:i_output|vert_sync        ; 2       ;
 ; I2C_config:i2c_config|setup            ; 13      ;
-; Total number of inverted registers = 1 ;         ;
+; Total number of inverted registers = 3 ;         ;
 +----------------------------------------+---------+
 
 
@@ -417,7 +414,7 @@ Encoding Type:  One-Hot
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------+
 ; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |HDMI_OUT|I2C_config:i2c_config|lookup_table_index[3]                          ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; Yes        ; |HDMI_OUT|I2C_config:i2c_config|I2C_controller:I2C_cont|count[1]               ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; Yes        ; |HDMI_OUT|I2C_config:i2c_config|I2C_controller:I2C_cont|count[7]               ;
 ; 7:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |HDMI_OUT|I2C_config:i2c_config|I2C_controller:I2C_cont|slave_address_write[8] ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |HDMI_OUT|I2C_config:i2c_config|currentState                                   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------+
@@ -811,66 +808,40 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "image_output:i_output|vertical_draw:v_draw"                                                                                                                                                          ;
-+------------------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port                   ; Type  ; Severity ; Details                                                                                                                                                                             ;
-+------------------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; reset_n                ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; v_back_porch[11..6]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; v_back_porch[4..1]     ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; v_back_porch[5]        ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; v_back_porch[0]        ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; v_sync_length[11..1]   ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; v_sync_length[0]       ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; v_total_pixels[3..2]   ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; v_total_pixels[11..10] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; v_total_pixels[8..4]   ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; v_total_pixels[1..0]   ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; v_total_pixels[9]      ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; v_end                  ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (12 bits) it drives.  The 20 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; h_sync_length[4..0]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; h_sync_length[11..7]   ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; h_sync_length[6]       ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; h_sync_length[5]       ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; h_total_pixels[9..8]   ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; h_total_pixels[4..0]   ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; h_total_pixels[11..10] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; h_total_pixels[7..5]   ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; h_start                ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (12 bits) it drives.  The 20 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-+------------------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------------+-----------------------+
 ; Type                        ; Count                 ;
 +-----------------------------+-----------------------+
 ; arriav_ff                   ; 109                   ;
-;     ENA                     ; 28                    ;
-;     ENA SCLR                ; 18                    ;
-;     SCLR                    ; 19                    ;
-;     plain                   ; 44                    ;
+;     CLR                     ; 4                     ;
+;     CLR SCLR                ; 10                    ;
+;     ENA                     ; 26                    ;
+;     ENA CLR                 ; 2                     ;
+;     ENA CLR SCLR            ; 10                    ;
+;     ENA SCLR                ; 8                     ;
+;     SCLR                    ; 9                     ;
+;     plain                   ; 40                    ;
 ; arriav_io_obuf              ; 2                     ;
-; arriav_lcell_comb           ; 116                   ;
+; arriav_lcell_comb           ; 118                   ;
 ;     arith                   ; 37                    ;
 ;         1 data inputs       ; 37                    ;
-;     normal                  ; 79                    ;
-;         0 data inputs       ; 1                     ;
-;         1 data inputs       ; 1                     ;
-;         2 data inputs       ; 9                     ;
-;         3 data inputs       ; 8                     ;
+;     normal                  ; 81                    ;
+;         0 data inputs       ; 2                     ;
+;         1 data inputs       ; 2                     ;
+;         2 data inputs       ; 10                    ;
+;         3 data inputs       ; 7                     ;
 ;         4 data inputs       ; 23                    ;
 ;         5 data inputs       ; 16                    ;
 ;         6 data inputs       ; 21                    ;
-; boundary_port               ; 33                    ;
+; boundary_port               ; 41                    ;
 ; cyclonev_fractional_pll     ; 1                     ;
 ; cyclonev_pll_output_counter ; 1                     ;
 ; cyclonev_pll_reconfig       ; 1                     ;
 ; cyclonev_pll_refclk_select  ; 1                     ;
 ;                             ;                       ;
 ; Max LUT depth               ; 3.00                  ;
-; Average LUT depth           ; 1.35                  ;
+; Average LUT depth           ; 1.34                  ;
 +-----------------------------+-----------------------+
 
 
@@ -889,16 +860,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed Jun 05 04:12:39 2019
+    Info: Processing started: Wed Jun 05 22:15:43 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off HDMI_OUT -c HDMI_OUT
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file hdmi_out.v
     Info (12023): Found entity 1: HDMI_OUT File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file vertical_draw.v
-    Info (12023): Found entity 1: vertical_draw File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/vertical_draw.v Line: 7
 Info (12021): Found 1 design units, including 1 entities, in source file image_output.v
-    Info (12023): Found entity 1: image_output File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 1
+    Info (12023): Found entity 1: image_output File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 8
 Info (12021): Found 1 design units, including 1 entities, in source file i2c_config.v
     Info (12023): Found entity 1: I2C_config File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file i2c_controller.v
@@ -909,20 +878,19 @@ Info (12021): Found 1 design units, including 1 entities, in source file pll/pll
     Info (12023): Found entity 1: pll File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/pll/pll.v Line: 8
 Info (12021): Found 1 design units, including 1 entities, in source file pll/pll/pll_0002.v
     Info (12023): Found entity 1: pll_0002 File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/pll/pll/pll_0002.v Line: 2
-Warning (10236): Verilog HDL Implicit Net warning at HDMI_OUT.v(54): created implicit net for "reset" File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 54
 Info (12127): Elaborating entity "HDMI_OUT" for the top level hierarchy
-Info (12128): Elaborating entity "image_output" for hierarchy "image_output:i_output" File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 50
-Warning (10036): Verilog HDL or VHDL warning at image_output.v(15): object "_v_front_porch" assigned a value but never read File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 15
-Warning (10036): Verilog HDL or VHDL warning at image_output.v(21): object "_h_front_porch" assigned a value but never read File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 21
-Info (12128): Elaborating entity "vertical_draw" for hierarchy "image_output:i_output|vertical_draw:v_draw" File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 46
-Warning (10036): Verilog HDL or VHDL warning at vertical_draw.v(32): object "h_act_d" assigned a value but never read File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/vertical_draw.v Line: 32
-Warning (10036): Verilog HDL or VHDL warning at vertical_draw.v(34): object "v_act_d" assigned a value but never read File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/vertical_draw.v Line: 34
-Warning (10230): Verilog HDL assignment warning at vertical_draw.v(42): truncated value with size 12 to match size of target (10) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/vertical_draw.v Line: 42
-Warning (10230): Verilog HDL assignment warning at vertical_draw.v(50): truncated value with size 12 to match size of target (10) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/vertical_draw.v Line: 50
-Warning (10230): Verilog HDL assignment warning at vertical_draw.v(52): truncated value with size 32 to match size of target (10) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/vertical_draw.v Line: 52
-Warning (10230): Verilog HDL assignment warning at vertical_draw.v(75): truncated value with size 12 to match size of target (10) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/vertical_draw.v Line: 75
-Warning (10230): Verilog HDL assignment warning at vertical_draw.v(84): truncated value with size 32 to match size of target (10) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/vertical_draw.v Line: 84
-Info (12128): Elaborating entity "pll" for hierarchy "image_output:i_output|pll:clock_25" File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 53
+Warning (10034): Output port "GPIO[7]" at HDMI_OUT.v(17) has no driver File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 17
+Info (12128): Elaborating entity "image_output" for hierarchy "image_output:i_output" File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 40
+Warning (10036): Verilog HDL or VHDL warning at image_output.v(30): object "_v_front_porch" assigned a value but never read File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 30
+Warning (10036): Verilog HDL or VHDL warning at image_output.v(36): object "_h_front_porch" assigned a value but never read File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 36
+Warning (10036): Verilog HDL or VHDL warning at image_output.v(44): object "h_act_d" assigned a value but never read File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 44
+Warning (10036): Verilog HDL or VHDL warning at image_output.v(46): object "v_act_d" assigned a value but never read File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 46
+Warning (10230): Verilog HDL assignment warning at image_output.v(53): truncated value with size 12 to match size of target (10) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 53
+Warning (10230): Verilog HDL assignment warning at image_output.v(57): truncated value with size 12 to match size of target (10) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 57
+Warning (10230): Verilog HDL assignment warning at image_output.v(66): truncated value with size 12 to match size of target (10) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 66
+Warning (10230): Verilog HDL assignment warning at image_output.v(68): truncated value with size 32 to match size of target (10) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 68
+Warning (10230): Verilog HDL assignment warning at image_output.v(89): truncated value with size 32 to match size of target (10) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 89
+Info (12128): Elaborating entity "pll" for hierarchy "image_output:i_output|pll:clock_25" File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/image_output.v Line: 26
 Info (12128): Elaborating entity "pll_0002" for hierarchy "image_output:i_output|pll:clock_25|pll_0002:pll_inst" File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/pll/pll.v Line: 24
 Info (12128): Elaborating entity "altera_pll" for hierarchy "image_output:i_output|pll:clock_25|pll_0002:pll_inst|altera_pll:altera_pll_i" File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/pll/pll/pll_0002.v Line: 239
 Warning (10034): Output port "lvds_clk" at altera_pll.v(319) has no driver File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altera_pll.v Line: 319
@@ -1159,9 +1127,9 @@ Warning (10034): Output port "lvdsclk" at altera_cyclonev_pll.v(641) has no driv
 Info (12131): Elaborated megafunction instantiation "image_output:i_output|pll:clock_25|pll_0002:pll_inst|altera_pll:altera_pll_i|altera_cyclonev_pll:cyclonev_pll", which is child of megafunction instantiation "image_output:i_output|pll:clock_25|pll_0002:pll_inst|altera_pll:altera_pll_i" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altera_pll.v Line: 2223
 Info (12128): Elaborating entity "altera_cyclonev_pll_base" for hierarchy "image_output:i_output|pll:clock_25|pll_0002:pll_inst|altera_pll:altera_pll_i|altera_cyclonev_pll:cyclonev_pll|altera_cyclonev_pll_base:fpll_0" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altera_cyclonev_pll.v Line: 1152
 Info (12131): Elaborated megafunction instantiation "image_output:i_output|pll:clock_25|pll_0002:pll_inst|altera_pll:altera_pll_i|altera_cyclonev_pll:cyclonev_pll|altera_cyclonev_pll_base:fpll_0", which is child of megafunction instantiation "image_output:i_output|pll:clock_25|pll_0002:pll_inst|altera_pll:altera_pll_i" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altera_cyclonev_pll.v Line: 1152
-Info (12128): Elaborating entity "I2C_config" for hierarchy "I2C_config:i2c_config" File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 63
+Info (12128): Elaborating entity "I2C_config" for hierarchy "I2C_config:i2c_config" File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 53
 Warning (10230): Verilog HDL assignment warning at I2C_config.v(68): truncated value with size 25 to match size of target (24) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 68
-Warning (10230): Verilog HDL assignment warning at I2C_config.v(118): truncated value with size 32 to match size of target (1) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 118
+Warning (10230): Verilog HDL assignment warning at I2C_config.v(115): truncated value with size 32 to match size of target (1) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 115
 Info (12128): Elaborating entity "counter" for hierarchy "I2C_config:i2c_config|counter:counter_100khz" File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 26
 Info (12128): Elaborating entity "I2C_controller" for hierarchy "I2C_config:i2c_config|I2C_controller:I2C_cont" File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_config.v Line: 41
 Warning (10230): Verilog HDL assignment warning at I2C_controller.v(75): truncated value with size 32 to match size of target (8) File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/I2C_controller.v Line: 75
@@ -1174,28 +1142,30 @@ Warning (14284): Synthesized away the following node(s):
         Warning (14320): Synthesized away node "image_output:i_output|pll:clock_25|pll_0002:pll_inst|altera_pll:altera_pll_i|cntsel_temp[1]" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altera_pll.v Line: 424
         Warning (14320): Synthesized away node "image_output:i_output|pll:clock_25|pll_0002:pll_inst|altera_pll:altera_pll_i|cntsel_temp[0]" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altera_pll.v Line: 424
         Warning (14320): Synthesized away node "image_output:i_output|pll:clock_25|pll_0002:pll_inst|altera_pll:altera_pll_i|gnd" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altera_pll.v Line: 426
-Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13034): The following nodes have both tri-state and non-tri-state drivers
     Warning (13035): Inserted always-enabled tri-state buffer between "I2C_SCL" and its non-tri-state driver. File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
+Info (13060): One or more bidirectional pins are fed by always enabled tri-state buffers
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "I2C_SCL" is moved to its source File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
 Warning (13009): TRI or OPNDRN buffers permanently enabled
     Warning (13010): Node "I2C_SCL~synth" File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 9
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HDMI_TX_D[0]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
-    Warning (13410): Pin "HDMI_TX_D[1]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
-    Warning (13410): Pin "HDMI_TX_D[2]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
-    Warning (13410): Pin "HDMI_TX_D[3]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
-    Warning (13410): Pin "HDMI_TX_D[4]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
-    Warning (13410): Pin "HDMI_TX_D[5]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
-    Warning (13410): Pin "HDMI_TX_D[6]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
-    Warning (13410): Pin "HDMI_TX_D[7]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
-    Warning (13410): Pin "HDMI_TX_D[8]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
-    Warning (13410): Pin "HDMI_TX_D[9]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
-    Warning (13410): Pin "HDMI_TX_D[10]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
-    Warning (13410): Pin "HDMI_TX_D[11]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
-    Warning (13410): Pin "HDMI_TX_D[12]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
-    Warning (13410): Pin "HDMI_TX_D[13]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
-    Warning (13410): Pin "HDMI_TX_D[14]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
-    Warning (13410): Pin "HDMI_TX_D[15]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
+    Warning (13410): Pin "HDMI_TX_D[0]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
+    Warning (13410): Pin "HDMI_TX_D[1]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
+    Warning (13410): Pin "HDMI_TX_D[2]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
+    Warning (13410): Pin "HDMI_TX_D[3]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
+    Warning (13410): Pin "HDMI_TX_D[4]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
+    Warning (13410): Pin "HDMI_TX_D[5]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
+    Warning (13410): Pin "HDMI_TX_D[6]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
+    Warning (13410): Pin "HDMI_TX_D[7]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
+    Warning (13410): Pin "HDMI_TX_D[8]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
+    Warning (13410): Pin "HDMI_TX_D[9]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
+    Warning (13410): Pin "HDMI_TX_D[10]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
+    Warning (13410): Pin "HDMI_TX_D[11]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
+    Warning (13410): Pin "HDMI_TX_D[12]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
+    Warning (13410): Pin "HDMI_TX_D[13]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
+    Warning (13410): Pin "HDMI_TX_D[14]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
+    Warning (13410): Pin "HDMI_TX_D[15]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
     Warning (13410): Pin "HDMI_TX_D[16]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
     Warning (13410): Pin "HDMI_TX_D[17]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
     Warning (13410): Pin "HDMI_TX_D[18]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
@@ -1204,24 +1174,26 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HDMI_TX_D[21]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
     Warning (13410): Pin "HDMI_TX_D[22]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
     Warning (13410): Pin "HDMI_TX_D[23]" is stuck at VCC File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 10
+    Warning (13410): Pin "GPIO[2]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 17
+    Warning (13410): Pin "GPIO[7]" is stuck at GND File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 17
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 17 registers lost all their fanouts during netlist optimizations.
+Warning (14632): Output pin "GPIO[1]" driven by bidirectional pin "I2C_SDA" cannot be tri-stated File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 17
+Info (17049): 16 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/output_files/HDMI_OUT.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 8 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 2 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "key1" File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 2
+    Info (16011): Adding 10 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "HDMI_TX_INT" File: C:/Users/Tim/Desktop/hdmi-add-project/HDMI_TX/HDMI_OUT.v Line: 5
-Info (21057): Implemented 176 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 183 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 28 output pins
+    Info (21059): Implemented 36 output pins
     Info (21060): Implemented 2 bidirectional pins
-    Info (21061): Implemented 139 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 63 warnings
-    Info: Peak virtual memory: 4854 megabytes
-    Info: Processing ended: Wed Jun 05 04:12:50 2019
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:22
+    Info (21061): Implemented 138 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 65 warnings
+    Info: Peak virtual memory: 4856 megabytes
+    Info: Processing ended: Wed Jun 05 22:15:55 2019
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:24
 
 
 +------------------------------------------+

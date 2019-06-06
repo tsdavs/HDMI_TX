@@ -141,16 +141,11 @@ always @(posedge(clock_100khz))
 					stop <= 0;
 					currentState <= 0;
 				end
-			11:
-				begin
-				
-				end
 				
 			default: 
 				begin
 					
 				end
-		
 		
 		endcase
 end

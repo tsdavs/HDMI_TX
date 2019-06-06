@@ -50,50 +50,47 @@ reg setup = 1;
 
 always @ (posedge(clock_100khz))
 	begin
-			if(reset == 0) begin//remove this later
-				setup <= 1;
-			end
-			
-			if(setup == 1) begin 
-				lookup_table_index <= 0;
-				_start <= 1'b0;
-				currentState <= 0;
-				setup <= 0;
-			end else begin
-				if(lookup_table_index < lookup_table_size) begin
-					case(currentState)
-						0: 
-							begin
-								_start <= 1'b1;
-								i2c_data <= {8'h72, lookup_table_data};//3-bytes -> [device_address,memory_address,payload]
-								currentState <= 1;
-							end
-						1: 
-							begin
-								if(_stop == 0) begin
-									if(_ack == 0) begin
-										currentState <= 2;
-									end else begin
-										currentState <= 0;
-										_start <= 0;
-									end
+		if(reset == 0) begin//remove this later
+			setup <= 1;
+		end
+		
+		if(setup == 1) begin 
+			lookup_table_index <= 0;
+			_start <= 1'b0;
+			currentState <= 0;
+			setup <= 0;
+		end else begin
+			if(lookup_table_index < lookup_table_size) begin
+				case(currentState)
+					0: 
+						begin
+							_start <= 1'b1;
+							i2c_data <= {8'h72, lookup_table_data};//3-bytes -> [device_address,memory_address,payload]
+							currentState <= 1;
+						end
+					1: 
+						begin
+							if(_stop == 0) begin
+								if(_ack == 0) begin
+									currentState <= 2;
+								end else begin
+									currentState <= 0;
+									_start <= 0;
 								end
 							end
-						2: 
-							begin
-								lookup_table_index = lookup_table_index + 1'b1; //increment
-								currentState <= 0;
-							end	
-						default: 
-							begin
-								currentState <= 0;
-							end	
-					endcase
-				end else begin
-					//i2c_data <= {8'h00, lookup_table_data};
-				end
-			end
-		//end//reset - remove this later
+						end
+					2: 
+						begin
+							lookup_table_index = lookup_table_index + 1'b1; //increment
+							currentState <= 0;
+						end	
+					default: 
+						begin
+							currentState <= 0;
+						end	
+				endcase
+			end 
+		end
 	end
 	
 always @(posedge(clock_100khz))
